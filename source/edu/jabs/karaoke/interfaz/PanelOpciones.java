@@ -1,0 +1,207 @@
+package edu.jabs.karaoke.interfaz;
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
+
+import edu.jabs.karaoke.mundo.Artista;
+
+/**
+ * Panel con operaciones de búsqueda y extensión.
+ */
+public class PanelOpciones extends JPanel implements ActionListener
+{
+    // -----------------------------------------------------------------
+    // Constantes
+    // -----------------------------------------------------------------
+
+    /**
+	 * Persistencia clase de Java.
+	 */
+	private static final long serialVersionUID = 105L;
+
+	/**
+	 * Representa el comando buscar.
+	 */
+    private static final String BUSCAR = "Buscar";
+
+    /**
+     * Representa el comando todas las canciones.
+     */
+    private static final String TODAS = "Lista de canciones";
+
+    /**
+     * Representa el comando buscar canción más fácil.
+     */
+    private static final String MAS_FACIL = "Canción más fácil";
+
+    /**
+     * Representa el comando buscar canción más difícil.
+     */
+    private static final String MAS_DIFICIL = "Canción más difícil";
+
+    /**
+     * Representa el comando buscar canción más larga.
+     */
+    private static final String MAS_LARGA = "Canción más larga";
+
+    /**
+     * Representa el comando buscar canción más corta.
+     */
+    private static final String MAS_CORTA = "Canción más corta";
+
+    /**
+     * Representa el comando buscar artista con más canciones.
+     */
+    private static final String MAS_CANCIONES = "Artista con más canciones";
+
+    /**
+     * Representa el comando opción 1.
+     */
+    private static final String OPCION_1 = "OPCION_1";
+
+    /**
+     * Representa el comando opción 2.
+     */
+    private static final String OPCION_2 = "OPCION_2";
+
+    // -----------------------------------------------------------------
+    // Atributos
+    // -----------------------------------------------------------------
+
+    /**
+     * Ventana principal de la aplicación.
+     */
+    private InterfazKaraoke principal;
+
+    // -----------------------------------------------------------------
+    // Atributos de interfaz
+    // -----------------------------------------------------------------
+
+    /**
+     * Botón para realizar búsquedas.
+     */
+    private JButton btnBuscar;
+
+    /**
+     * Botón para mostrar todas las canciones del karaoke.
+     */
+    private JButton btnTodas;
+
+    /**
+     * Botón para la opción 1.
+     */
+    private JButton btnOpcion1;
+
+    /**
+     * Botón para la opción 2.
+     */
+    private JButton btnOpcion2;
+
+    // -----------------------------------------------------------------
+    // Constructores
+    // -----------------------------------------------------------------
+
+    /**
+     * Constructor del panel.
+     * @param pVentana Ventana principal. pVentana != null.
+     */
+    public PanelOpciones( InterfazKaraoke pVentana )
+    {
+        principal = pVentana;
+
+        setBorder( new TitledBorder( "Opciones" ) );
+        setLayout( new GridLayout( 1, 4 ) );
+
+        // Botón opción buscar
+        btnBuscar = new JButton( BUSCAR );
+        btnBuscar.setActionCommand( BUSCAR );
+        btnBuscar.addActionListener( this );
+        add( btnBuscar );
+
+        // Botón opción todas
+        btnTodas = new JButton( TODAS );
+        btnTodas.setActionCommand( TODAS );
+        btnTodas.addActionListener( this );
+        add( btnTodas );
+
+        // Botón opción 1
+        btnOpcion1 = new JButton( "Opción 1" );
+        btnOpcion1.setActionCommand( OPCION_1 );
+        btnOpcion1.addActionListener( this );
+        add( btnOpcion1 );
+
+        // Botón opción 2
+        btnOpcion2 = new JButton( "Opción 2" );
+        btnOpcion2.setActionCommand( OPCION_2 );
+        btnOpcion2.addActionListener( this );
+        add( btnOpcion2 );
+    }
+
+    // -----------------------------------------------------------------
+    // Métodos
+    // -----------------------------------------------------------------
+
+    /**
+     * Manejo de los eventos de los botones.
+     * @param pEvento Acción que generó el evento. pEvento != null.
+     */
+    public void actionPerformed( ActionEvent pEvento )
+    {
+        String comando = pEvento.getActionCommand( );
+
+        if( comando.equals( BUSCAR ) )
+        {
+            String[] opciones = new String[]{ MAS_FACIL, MAS_DIFICIL, MAS_CORTA, MAS_LARGA, MAS_CANCIONES };
+            String busqueda = ( String )JOptionPane.showInputDialog( null, "Buscar: ", BUSCAR, JOptionPane.QUESTION_MESSAGE, null, opciones, MAS_FACIL );
+
+            if( busqueda != null )
+            {
+                if( busqueda.equals( MAS_FACIL ) )
+                {
+                    principal.mostrarCancionMasFacil( );
+                }
+                else if( busqueda.equals( MAS_DIFICIL ) )
+                {
+                    principal.mostrarCancionMasDificil( );
+                }
+                else if( busqueda.equals( MAS_CORTA ) )
+                {
+                    principal.mostrarCancionMasCorta( );
+                }
+                else if( busqueda.equals( MAS_LARGA ) )
+                {
+                    principal.mostrarCancionMasLarga( );
+                }
+                else
+                {
+                    principal.mostrarArtistaMasCanciones( );
+                }
+            }
+        }
+        else if( comando.equals( TODAS ) )
+        {
+            String[] categorias = { Artista.ROCK, Artista.POP, Artista.FUSION_LATINA, Artista.ELECTRO_HOUSE };
+            String c = ( String )JOptionPane.showInputDialog( null, "Categoría: ", TODAS, JOptionPane.QUESTION_MESSAGE, null, categorias, Artista.ROCK );
+            if( c != null )
+            {
+                String categoria = c;
+                principal.mostrarCanciones( categoria );
+            }
+        }
+        else if( OPCION_1.equals( pEvento.getActionCommand( ) ) )
+        {
+            principal.reqFuncOpcion1( );
+        }
+        else if( OPCION_2.equals( pEvento.getActionCommand( ) ) )
+        {
+            principal.reqFuncOpcion2( );
+        }
+    }
+
+}
