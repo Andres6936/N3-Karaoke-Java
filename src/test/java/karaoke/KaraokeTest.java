@@ -2,14 +2,14 @@ package edu.jabs.karaoke.test;
 
 import java.util.ArrayList;
 
-import edu.jabs.karaoke.mundo.Artista;
-import edu.jabs.karaoke.mundo.Cancion;
-import edu.jabs.karaoke.mundo.Karaoke;
-import edu.jabs.karaoke.mundo.ListaReproduccion;
+import karaoke.mundo.Artista;
+import karaoke.mundo.Cancion;
+import karaoke.mundo.Karaoke;
+import karaoke.mundo.ListaReproduccion;
 import junit.framework.TestCase;
 
 /**
- * Clase usada para verificar que los m閠odos de la clase Karaoke est閚 correctamente implementados.
+ * Clase usada para verificar que los m贸todos de la clase Karaoke est贸n correctamente implementados.
  */
 public class KaraokeTest extends TestCase
 {
@@ -18,12 +18,12 @@ public class KaraokeTest extends TestCase
     // -----------------------------------------------------------------
 
     /**
-     * Es la clase donde se har醤 las pruebas.
+     * Es la clase donde se har贸n las pruebas.
      */
     private Karaoke karaoke;
 
     // -----------------------------------------------------------------
-    // M閠odos
+    // M贸todos
     // -----------------------------------------------------------------
 
     /**
@@ -54,14 +54,14 @@ public class KaraokeTest extends TestCase
         karaoke.agregarCancion( "AC/DC", "cancion10", 68, "letra8", 7, "ruta8" );
         karaoke.agregarCancion( "Calvin Harris", "cancion11", 75, "letra11", 4, "ruta11" );
         karaoke.agregarCancion( "Calvin Harris", "cancion12", 20, "letra12", 9, "ruta12" );
-        karaoke.agregarCancion( "Bomba Est閞eo", "cancion13", 345, "letra13", 3, "ruta13" );
+        karaoke.agregarCancion( "Bomba Est贸reo", "cancion13", 345, "letra13", 3, "ruta13" );
         karaoke.agregarCancion( "ChocQuibTown", "cancion14", 90, "letra14", 2, "ruta14" );
         karaoke.agregarCancion( "ChocQuibTown", "cancion15", 45, "letra15", 2, "ruta15" );
 
     }
 
     /**
-     * Construye un Karaoke con 2 listas de reproducci髇 y 5 canciones en cada una.
+     * Construye un Karaoke con 2 listas de reproducci贸n y 5 canciones en cada una.
      */
     private void setupEscenario3( )
     {
@@ -85,8 +85,8 @@ public class KaraokeTest extends TestCase
     }
 
     /**
-     * Prueba 1: Se encarga de verificar el m閠odo constructor de la clase.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 1: Se encarga de verificar el m贸todo constructor de la clase.<br>
+     * <b> M贸todos a probar: </b> <br>
      * Karaoke <br>
      * darArtistas <br>
      * darNombre <br>
@@ -112,18 +112,18 @@ public class KaraokeTest extends TestCase
         assertEquals( "Artista 4 incorrecto.", "ChocQuibTown", artistas[ 3 ].darNombre( ) );
         assertEquals( "Artista 5 incorrecto.", "Michael Jackson", artistas[ 4 ].darNombre( ) );
         assertEquals( "Artista 6 incorrecto.", "Rihanna", artistas[ 5 ].darNombre( ) );
-        assertEquals( "Artista 7 incorrecto.", "Bomba Est閞eo", artistas[ 6 ].darNombre( ) );
+        assertEquals( "Artista 7 incorrecto.", "Bomba Est贸reo", artistas[ 6 ].darNombre( ) );
         assertEquals( "Artista 8 incorrecto.", "Green Day", artistas[ 7 ].darNombre( ) );
         assertEquals( "Artista 9 incorrecto.", "Bon Jovi", artistas[ 8 ].darNombre( ) );
 
 		ArrayList< ListaReproduccion > listasReproduccion = karaoke.darListasDeReproduccion( );
-        assertNotNull( "La lista que contiene las listas de reproducci髇 no fue inicializada", listasReproduccion );
+        assertNotNull( "La lista que contiene las listas de reproducci贸n no fue inicializada", listasReproduccion );
 
     }
 
     /**
-     * Prueba 2: Se encarga de verificar el m閠odo buscarArtista.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 2: Se encarga de verificar el m贸todo buscarArtista.<br>
+     * <b> M贸todos a probar: </b> <br>
      * buscarArtista <br>
      * darNombre <br>
      * <b> Casos de prueba:</b><br>
@@ -136,141 +136,141 @@ public class KaraokeTest extends TestCase
 
         // 1
         Artista artista = karaoke.buscarArtista( "Adele" );
-        assertNotNull( "El artista no deber韆 ser nulo.", artista );
+        assertNotNull( "El artista no deber贸a ser nulo.", artista );
         assertEquals( "El artista encontrado no es correcto.", "Adele", artista.darNombre( ) );
 
         // 2
         Artista artista2 = karaoke.buscarArtista( "artista4" );
-        assertNull( "El artista deber韆 ser nulo.", artista2 );
+        assertNull( "El artista deber贸a ser nulo.", artista2 );
     }
 
     /**
-     * Prueba 3: Se encarga de verificar el m閠odo agregarCancion.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 3: Se encarga de verificar el m贸todo agregarCancion.<br>
+     * <b> M贸todos a probar: </b> <br>
      * agregarCancion <br>
      * buscarArtista <br>
      * darCanciones <br>
      * <b> Casos de prueba:</b><br>
-     * 1. La canci髇 es agregada a un artista. <br>
-     * 2. La canci髇 no es agregada a un artista.
+     * 1. La canci贸n es agregada a un artista. <br>
+     * 2. La canci贸n no es agregada a un artista.
      */
     public void testAgregarCancion( )
     {
         setupEscenario1( );
 
         // 1
-        boolean agregada = karaoke.agregarCancion( "Adele", "canci髇", 100, "letra", 5, "ruta" );
-        assertTrue( "Se deber韆 agregar la canci髇 al karaoke.", agregada );
+        boolean agregada = karaoke.agregarCancion( "Adele", "canci贸n", 100, "letra", 5, "ruta" );
+        assertTrue( "Se deber贸a agregar la canci贸n al karaoke.", agregada );
 
         Artista a = karaoke.buscarArtista( "Adele" );
-        assertEquals( "El canci髇 no fue agregada al artista.", 1, a.darCanciones( ).size( ) );
+        assertEquals( "El canci贸n no fue agregada al artista.", 1, a.darCanciones( ).size( ) );
         // 2
-        boolean agregada2 = karaoke.agregarCancion( "Adele", "canci髇", 100, "letra", 5, "ruta" );
-        assertFalse( "No se deber韆 agregar la canci髇 al karaoke.", agregada2 );
-        assertEquals( "El  n鷐ero de canciones del artista no deber韆 cambiar.", 1, a.darCanciones( ).size( ) );
+        boolean agregada2 = karaoke.agregarCancion( "Adele", "canci贸n", 100, "letra", 5, "ruta" );
+        assertFalse( "No se deber贸a agregar la canci贸n al karaoke.", agregada2 );
+        assertEquals( "El  n贸mero de canciones del artista no deber贸a cambiar.", 1, a.darCanciones( ).size( ) );
     }
 
     /**
-     * Prueba 4: Se encarga de verificar el m閠odo darCancionMasDificil.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 4: Se encarga de verificar el m贸todo darCancionMasDificil.<br>
+     * <b> M贸todos a probar: </b> <br>
      * darCancionMasDificil <br>
      * darNombre <br>
      * darDificultad <br>
      * <b> Casos de prueba:</b><br>
-     * 1. Se encuentra la canci髇 m醩 dif韈il.
+     * 1. Se encuentra la canci贸n m贸s dif贸cil.
      */
     public void testDarCancionMasDificil( )
     {
         setUpEscenario2( );
 
         Cancion dificil = karaoke.darCancionMasDificil( );
-        assertNotNull( "La canci髇 no deber韆 ser nula.", dificil );
-        assertEquals( "La canci髇 retornada no es la m醩 dif韈il.", "cancion12", dificil.darNombre( ) );
-        assertEquals( "La canci髇 retornada no es la m醩 dif韈il.", 9, dificil.darDificultad( ) );
+        assertNotNull( "La canci贸n no deber贸a ser nula.", dificil );
+        assertEquals( "La canci贸n retornada no es la m贸s dif贸cil.", "cancion12", dificil.darNombre( ) );
+        assertEquals( "La canci贸n retornada no es la m贸s dif贸cil.", 9, dificil.darDificultad( ) );
     }
 
     /**
-     * Prueba 5: Se encarga de verificar el m閠odo darCancionMasFacil.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 5: Se encarga de verificar el m贸todo darCancionMasFacil.<br>
+     * <b> M贸todos a probar: </b> <br>
      * darCancionMasFacil <br>
      * darNombre <br>
      * darDificultad <br>
      * <b> Casos de prueba:</b><br>
-     * 1. Se encuentra la canci髇 m醩 f醕il.
+     * 1. Se encuentra la canci贸n m贸s f贸cil.
      */
     public void testDarCancionMasFacil( )
     {
         setUpEscenario2( );
 
         Cancion facil = karaoke.darCancionMasFacil( );
-        assertNotNull( "La canci髇 no deber韆 ser nula.", facil );
-        assertEquals( "La canci髇 retornada no es la m醩 f醕il.", "cancion9", facil.darNombre( ) );
-        assertEquals( "La canci髇 retornada no es la m醩 f醕il.", 1, facil.darDificultad( ) );
+        assertNotNull( "La canci贸n no deber贸a ser nula.", facil );
+        assertEquals( "La canci贸n retornada no es la m贸s f贸cil.", "cancion9", facil.darNombre( ) );
+        assertEquals( "La canci贸n retornada no es la m贸s f贸cil.", 1, facil.darDificultad( ) );
 
     }
 
     /**
-     * Prueba 6: Se encarga de verificar el m閠odo darCancionMasLarga.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 6: Se encarga de verificar el m贸todo darCancionMasLarga.<br>
+     * <b> M贸todos a probar: </b> <br>
      * darCancionMasLarga <br>
      * darNombre <br>
      * darDuracion <br>
      * <b> Casos de prueba:</b><br>
-     * 1. Se encuentra la canci髇 m醩 larga.
+     * 1. Se encuentra la canci贸n m贸s larga.
      */
     public void testDarCancionMasLarga( )
     {
         setUpEscenario2( );
 
         Cancion larga = karaoke.darCancionMasLarga( );
-        assertNotNull( "La canci髇 no deber韆 ser nula.", larga );
-        assertEquals( "La canci髇 retornada no es la m醩 larga.", "cancion3", larga.darNombre( ) );
-        assertEquals( "La canci髇 retornada no es la m醩 larga.", 450, larga.darDuracion( ) );
+        assertNotNull( "La canci贸n no deber贸a ser nula.", larga );
+        assertEquals( "La canci贸n retornada no es la m贸s larga.", "cancion3", larga.darNombre( ) );
+        assertEquals( "La canci贸n retornada no es la m贸s larga.", 450, larga.darDuracion( ) );
     }
 
     /**
-     * Prueba 7: Se encarga de verificar el m閠odo darCancionMasCorta.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 7: Se encarga de verificar el m贸todo darCancionMasCorta.<br>
+     * <b> M贸todos a probar: </b> <br>
      * darCancionMasCorta <br>
      * darNombre <br>
      * darDuracion <br>
      * <b> Casos de prueba:</b><br>
-     * 1. Se encuentra la canci髇 m醩 corta.
+     * 1. Se encuentra la canci贸n m贸s corta.
      */
     public void testDarCancionMasCorta( )
     {
         setUpEscenario2( );
 
         Cancion corta = karaoke.darCancionMasCorta( );
-        assertNotNull( "La canci髇 no deber韆 ser nula.", corta );
-        assertEquals( "La canci髇 retornada no es la m醩 corta.", "cancion12", corta.darNombre( ) );
-        assertEquals( "La canci髇 retornada no es la m醩 corta.", 20, corta.darDuracion( ) );
+        assertNotNull( "La canci贸n no deber贸a ser nula.", corta );
+        assertEquals( "La canci贸n retornada no es la m贸s corta.", "cancion12", corta.darNombre( ) );
+        assertEquals( "La canci贸n retornada no es la m贸s corta.", 20, corta.darDuracion( ) );
     }
 
     /**
-     * Prueba 8: Se encarga de verificar el m閠odo darArtistaMasCanciones.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 8: Se encarga de verificar el m贸todo darArtistaMasCanciones.<br>
+     * <b> M贸todos a probar: </b> <br>
      * darArtistaMasCanciones <br>
      * darNombre <br>
      * <b> Casos de prueba:</b><br>
-     * 1. Se encuentra el artista con m醩 canciones.
+     * 1. Se encuentra el artista con m贸s canciones.
      */
     public void testDarArtistaMasCanciones( )
     {
         setUpEscenario2( );
 
         Artista artista = karaoke.darArtistaMasCanciones( );
-        assertNotNull( "El artista no deber韆 ser nulo", artista );
-        assertEquals( "El artista retornado no es el artista con mayor n鷐ero de canciones.", "AC/DC", artista.darNombre( ) );
+        assertNotNull( "El artista no deber贸a ser nulo", artista );
+        assertEquals( "El artista retornado no es el artista con mayor n贸mero de canciones.", "AC/DC", artista.darNombre( ) );
     }
 
     /**
-     * Prueba 9: Se encarga de verificar el m閠odo darCancionesCategoria.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 9: Se encarga de verificar el m贸todo darCancionesCategoria.<br>
+     * <b> M贸todos a probar: </b> <br>
      * darCancionesCategoria <br>
      * darNombre <br>
      * <b> Casos de prueba:</b><br>
-     * 1. Se encuentran las canciones para una cateogr韆.
+     * 1. Se encuentran las canciones para una cateogr贸a.
      */
     public void testDarCancionesCategoria( )
     {
@@ -278,67 +278,67 @@ public class KaraokeTest extends TestCase
         setUpEscenario2( );
 
 		ArrayList< Cancion > canciones = karaoke.darCancionesCategoria( Artista.POP );
-        assertNotNull( "La lista de canciones no deber韆 ser nula.", canciones );
-        assertEquals( "No se han incluido todas las canciones de la categor韆 en la lista.", 5, canciones.size( ) );
+        assertNotNull( "La lista de canciones no deber贸a ser nula.", canciones );
+        assertEquals( "No se han incluido todas las canciones de la categor贸a en la lista.", 5, canciones.size( ) );
 
         for( int i = 0; i < canciones.size( ); i++ )
         {
             Cancion c = ( Cancion )canciones.get( i );
             int numCancion = i + 1;
-            assertEquals( "La canci髇 en la lista no es correcta.", "cancion" + numCancion, c.darNombre( ) );
+            assertEquals( "La canci贸n en la lista no es correcta.", "cancion" + numCancion, c.darNombre( ) );
         }
 
     }
 
     /**
-     * Prueba 9: Se encarga de verificar el m閠odo buscarCancionEnKaraoke.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 9: Se encarga de verificar el m贸todo buscarCancionEnKaraoke.<br>
+     * <b> M贸todos a probar: </b> <br>
      * buscarCancionEnKaraoke <br>
      * darNombre <br>
      * <b> Casos de prueba:</b><br>
-     * 1. Se encuentra la canci髇 en el karaoke. <br>
-     * 2. No se encuentra la canci髇 en el karaoke.
+     * 1. Se encuentra la canci贸n en el karaoke. <br>
+     * 2. No se encuentra la canci贸n en el karaoke.
      */
     public void testBuscarCancionEnKaraoke( )
     {
         setupEscenario3( );
         Cancion c = karaoke.buscarCancionEnKaraoke( "cancion1" );
         // 1
-        assertNotNull( "La canci髇 no deber韆 ser nula.", c );
-        assertEquals( "La canci髇 retornada no es la correcta.", "cancion1", c.darNombre( ) );
+        assertNotNull( "La canci贸n no deber贸a ser nula.", c );
+        assertEquals( "La canci贸n retornada no es la correcta.", "cancion1", c.darNombre( ) );
         // 2
         Cancion c2 = karaoke.buscarCancionEnKaraoke( "cancion17" );
-        assertNull( "La canci髇 deber韆 ser nula.", c2 );
+        assertNull( "La canci贸n deber贸a ser nula.", c2 );
     }
 
     /**
-     * Prueba 10: Se encarga de verificar el m閠odo buscarListaReproduccion.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 10: Se encarga de verificar el m贸todo buscarListaReproduccion.<br>
+     * <b> M贸todos a probar: </b> <br>
      * buscarListaReproduccion <br>
      * <b> Casos de prueba:</b><br>
-     * 1. Se encuentra la lista de reproducci髇.<br>
-     * 2. No existe la lista de reproducci髇 buscada.
+     * 1. Se encuentra la lista de reproducci贸n.<br>
+     * 2. No existe la lista de reproducci贸n buscada.
      */
     public void testBuscarListaReproduccion( )
     {
         setupEscenario3( );
         // 1
         int lista = karaoke.buscarListaReproduccion( "Lista para viajar" );
-        assertNotNull( "La lista de reproducci髇 no deber韆 ser nula.", lista );
-        assertEquals( "La lista de reproducci髇 retornada no es la correcta.", 0, lista );
+        assertNotNull( "La lista de reproducci贸n no deber贸a ser nula.", lista );
+        assertEquals( "La lista de reproducci贸n retornada no es la correcta.", 0, lista );
 
         // 2
         int lista2 = karaoke.buscarListaReproduccion( "Lista1" );
-        assertEquals( "La lista de reproducci髇 deber韆 ser nula.", -1, lista2 );
+        assertEquals( "La lista de reproducci贸n deber贸a ser nula.", - 1, lista2 );
     }
 
     /**
-     * Prueba 11: Se encarga de verificar el m閠odo agregarListaReproduccion.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 11: Se encarga de verificar el m贸todo agregarListaReproduccion.<br>
+     * <b> M贸todos a probar: </b> <br>
      * agregarListaReproduccion<br>
      * darListasDeReproduccion<br>
      * <b> Casos de prueba:</b><br>
-     * 1. La lista de reproducci髇 es agregada.
+     * 1. La lista de reproducci贸n es agregada.
      */
     public void testAgregarListaReproduccion( )
     {
@@ -346,33 +346,33 @@ public class KaraokeTest extends TestCase
 
         // 1
         karaoke.agregarListaReproduccion( "Lista1" );
-        assertEquals( "El n鷐ero de listas de reproducci髇 del karaoke deber韆 cambiar.", 3, karaoke.darListasDeReproduccion( ).size( ) );
+        assertEquals( "El n贸mero de listas de reproducci贸n del karaoke deber贸a cambiar.", 3, karaoke.darListasDeReproduccion( ).size( ) );
 
     }
     /**
-     * Prueba 12: Se encarga de verificar el m閠odo eliminarListaReproduccion.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 12: Se encarga de verificar el m贸todo eliminarListaReproduccion.<br>
+     * <b> M贸todos a probar: </b> <br>
      * eliminarListaReproduccion<br>
      * darListasDeReproduccion<br>
      * <b> Casos de prueba:</b><br>
-     * 1. La lista de reproducci髇 es eliminada.
+     * 1. La lista de reproducci贸n es eliminada.
      */
     public void testEliminarListaReproduccion( )
     {
         setupEscenario3( );
         // 1
         karaoke.eliminarListaReproduccion( "Lista para viajar" );
-        assertEquals( "El n鷐ero de listas de reproducci髇 del karaoke deber韆 cambiar.", 1, karaoke.darListasDeReproduccion( ).size( ) );
+        assertEquals( "El n贸mero de listas de reproducci贸n del karaoke deber贸a cambiar.", 1, karaoke.darListasDeReproduccion( ).size( ) );
 
     }
 
     /**
-     * Prueba 13: Se encarga de verificar el m閠odo darCancionesArtista, para un karaoke con canciones.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 13: Se encarga de verificar el m贸todo darCancionesArtista, para un karaoke con canciones.<br>
+     * <b> M贸todos a probar: </b> <br>
      * darCancionesArtista<br>
      * <b> Casos de prueba:</b><br>
      * 1. Un artista tiene varias canciones y corresponden. <br>
-     * 2. Un artista tiene una 鷑ica canci髇 y corresponde.
+     * 2. Un artista tiene una 贸nica canci贸n y corresponde.
      */
     public void testDarCancionesArtista1( )
     {
@@ -383,19 +383,19 @@ public class KaraokeTest extends TestCase
 
         Cancion c1 = ( Cancion )canciones.get( 0 );
         Cancion c2 = ( Cancion )canciones.get( 1 );
-        assertEquals( "El nombre de la canci髇 no corresponde.", c1.darNombre( ), "cancion2" );
-        assertEquals( "El nombre de la canci髇 no corresponde.", c2.darNombre( ), "cancion3" );
+        assertEquals( "El nombre de la canci贸n no corresponde.", c1.darNombre( ), "cancion2" );
+        assertEquals( "El nombre de la canci贸n no corresponde.", c2.darNombre( ), "cancion3" );
 
         // 2
         canciones = karaoke.darCancionesArtista( "Adele" );
         c1 = ( Cancion )canciones.get( 0 );
         assertEquals( "La cantidad de canciones no corresponde.", 1, canciones.size( ) );
-        assertEquals( "El nombre de la canci髇 no corresponde.", c1.darNombre( ), "cancion1" );
+        assertEquals( "El nombre de la canci贸n no corresponde.", c1.darNombre( ), "cancion1" );
     }
 
     /**
-     * Prueba 14: Se encarga de verificar el m閠odo darCancionesArtista, para un karakoe sin canciones.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 14: Se encarga de verificar el m贸todo darCancionesArtista, para un karakoe sin canciones.<br>
+     * <b> M贸todos a probar: </b> <br>
      * darCancionesArtista<br>
      * <b> Casos de prueba:</b><br>
      * 1. La cantidad de canciones retornada es correcta. <br>
@@ -409,13 +409,13 @@ public class KaraokeTest extends TestCase
     }
 
     /**
-     * Prueba 15: Se encarga de verificar el m閠odo eliminarCancionDeListaReproduccion.<br>
-     * <b> M閠odos a probar: </b> <br>
+     * Prueba 15: Se encarga de verificar el m贸todo eliminarCancionDeListaReproduccion.<br>
+     * <b> M贸todos a probar: </b> <br>
      * eliminarCancionDeListaReproduccion<br>
      * buscarListaReproduccion<br>
      * darListasDeReproduccion<br>
      * <b> Casos de prueba:</b><br>
-     * 1. La canci髇 es eliminada de la lista de reproducci髇. <br>
+     * 1. La canci贸n es eliminada de la lista de reproducci贸n. <br>
      */
     public void testEliminarCancionDeListaReproduccion( )
     {

@@ -1,4 +1,4 @@
-package edu.jabs.karaoke.interfaz;
+package karaoke.interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -15,10 +15,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import edu.jabs.karaoke.mundo.Cancion;
+import karaoke.mundo.Cancion;
 
 /**
- * Di·logo para agregar una lista de reproducciÛn.
+ * Di√≥logo para agregar una lista de reproducci√≥n.
  *
  */
 public class DialogoAgregarListaReproduccion extends JDialog implements ActionListener
@@ -34,12 +34,12 @@ public class DialogoAgregarListaReproduccion extends JDialog implements ActionLi
 	private static final long serialVersionUID = 108L;
 
 	/**
-	 * Representa el comando que acepta la creaciÛn de una lista de reproducciÛn.
+     * Representa el comando que acepta la creaci√≥n de una lista de reproducci√≥n.
 	 */
     private static final String ACEPTAR = "Aceptar";
 
     /**
-     * Representa el comando que cancela la creaciÛn de una lista de reproducciÛn.
+     * Representa el comando que cancela la creaci√≥n de una lista de reproducci√≥n.
      */
     private static final String CANCELAR = "Cancelar";
 
@@ -48,7 +48,7 @@ public class DialogoAgregarListaReproduccion extends JDialog implements ActionLi
     // -----------------------------------------------------------------
 
     /**
-     * Ventana principal de la aplicaciÛn.
+     * Ventana principal de la aplicaci√≥n.
      */
     private InterfazKaraoke principal;
 
@@ -62,7 +62,7 @@ public class DialogoAgregarListaReproduccion extends JDialog implements ActionLi
     private JLabel lblNombre;
 
     /**
-     * Etiqueta de la canciÛn.
+     * Etiqueta de la canci√≥n.
      */
     private JLabel lblCancion;
 
@@ -77,12 +77,12 @@ public class DialogoAgregarListaReproduccion extends JDialog implements ActionLi
 	private JComboBox< String > cbCanciones;
 
     /**
-     * BotÛn para aceptar la creaciÛn de una lista de reproducciÛn.
+     * Bot√≥n para aceptar la creaci√≥n de una lista de reproducci√≥n.
      */
     private JButton btnAceptar;
 
     /**
-     * BotÛn para cancelar la creaciÛn de una lista de reproducciÛn.
+     * Bot√≥n para cancelar la creaci√≥n de una lista de reproducci√≥n.
      */
     private JButton btnCancelar;
 
@@ -91,14 +91,14 @@ public class DialogoAgregarListaReproduccion extends JDialog implements ActionLi
     // -----------------------------------------------------------------
 
     /**
-     * Crea el di·logo para agregar una lista de reproducciÛn.
-     * @param pPrincipal Ventana principal de la aplicaciÛn. pPrincipal != null.
+     * Crea el di√≥logo para agregar una lista de reproducci√≥n.
+     * @param pPrincipal Ventana principal de la aplicaci√≥n. pPrincipal != null.
      */
     public DialogoAgregarListaReproduccion( InterfazKaraoke pPrincipal )
     {
         principal = pPrincipal;
         setLayout( new BorderLayout( ) );
-        setTitle( "Agregar lista de reproducciÛn" );
+        setTitle( "Agregar lista de reproducci√≥n" );
 
         JPanel panelNorte = new JPanel( );
         panelNorte.setPreferredSize( new Dimension( 10, 10 ) );
@@ -124,7 +124,7 @@ public class DialogoAgregarListaReproduccion extends JDialog implements ActionLi
         panelDatos.setLayout( new GridLayout( 3, 2 ) );
 
         lblNombre = new JLabel( "Nombre:" );
-        lblCancion = new JLabel( "Primera canciÛn:" );
+        lblCancion = new JLabel( "Primera canci√≥n:" );
         txtNombre = new JTextField( );
 		cbCanciones = new JComboBox< String >( );
 
@@ -160,12 +160,12 @@ public class DialogoAgregarListaReproduccion extends JDialog implements ActionLi
     }
 
     // -----------------------------------------------------------------
-    // MÈtodos
+    // M√≥todos
     // -----------------------------------------------------------------
 
     /**
      * Manejo de los eventos de los botones.
-     * @param pEvento AcciÛn que generÛ el evento. pEvento != null.
+     * @param pEvento Acci√≥n que gener√≥ el evento. pEvento != null.
      */
     public void actionPerformed( ActionEvent pEvento )
     {
@@ -175,7 +175,7 @@ public class DialogoAgregarListaReproduccion extends JDialog implements ActionLi
             String nombre = txtNombre.getText( );
             if( nombre.equals( "" ) )
             {
-                JOptionPane.showMessageDialog( this, "El nombre no puede estar vacÌo.", "Agregar lista de reproducciÛn", JOptionPane.ERROR_MESSAGE );
+                JOptionPane.showMessageDialog( this, "El nombre no puede estar vac√≥o.", "Agregar lista de reproducci√≥n", JOptionPane.ERROR_MESSAGE );
             }
             else
             {

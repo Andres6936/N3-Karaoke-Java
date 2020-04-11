@@ -1,9 +1,9 @@
-package edu.jabs.karaoke.mundo;
+package karaoke.mundo;
 
 import java.util.ArrayList;
 
 /**
- * Representa una lista de reproducciÛn del karaoke.
+ * Representa una lista de reproducci√≥n del karaoke.
  */
 public class ListaReproduccion
 {
@@ -11,12 +11,12 @@ public class ListaReproduccion
     // Atributos
     // -----------------------------------------------------------------
     /**
-     * Lista de canciones incluidas en la lista de reproducciÛn.
+     * Lista de canciones incluidas en la lista de reproducci√≥n.
      */
 	private ArrayList< Cancion > canciones;
 
     /**
-     * Nombre de la lista de reproducciÛn.
+     * Nombre de la lista de reproducci√≥n.
      */
     private String nombre;
 
@@ -25,10 +25,10 @@ public class ListaReproduccion
     // -----------------------------------------------------------------
 
     /**
-     * Construye una nueva lista de reproducciÛn.<br>
-     * <b>post: </b> Se inicializÛ el atributo nombre con el valor dado por par·metro.<br>
-     * Se inicializÛ canciones como una lista vacÌa.
-     * @param pNombre Nombre de la lista de reproducciÛn. pNombre != null && pNombre != "".
+     * Construye una nueva lista de reproducci√≥n.<br>
+     * <b>post: </b> Se inicializ√≥ el atributo nombre con el valor dado por par√≥metro.<br>
+     * Se inicializ√≥ canciones como una lista vac√≥a.
+     * @param pNombre Nombre de la lista de reproducci√≥n. pNombre != null && pNombre != "".
      */
     public ListaReproduccion( String pNombre )
     {
@@ -37,12 +37,12 @@ public class ListaReproduccion
     }
 
     // -----------------------------------------------------------------
-    // MÈtodos
+    // M√≥todos
     // -----------------------------------------------------------------
 
     /**
-     * Retorna el nombre de la lista de reproducciÛn.
-     * @return Nombre de la lista de reproducciÛn.
+     * Retorna el nombre de la lista de reproducci√≥n.
+     * @return Nombre de la lista de reproducci√≥n.
      */
     public String darNombre( )
     {
@@ -50,8 +50,8 @@ public class ListaReproduccion
     }
 
     /**
-     * Retorna la lista de canciones incluidas en la lista de reproducciÛn.
-     * @return Lista de canciones incluidas en la lista de reproducciÛn.
+     * Retorna la lista de canciones incluidas en la lista de reproducci√≥n.
+     * @return Lista de canciones incluidas en la lista de reproducci√≥n.
      */
 	public ArrayList< Cancion > darCanciones( )
     {
@@ -59,10 +59,10 @@ public class ListaReproduccion
     }
 
     /**
-     * Busca una canciÛn con el nombre recibido por par·metro en la lista de canciones. <br>
-     * <b>pre: </b> La lista de canciones est· inicializada.
-     * @param pNombreCancion Nombre de la canciÛn. pNombreCancion != null && pNombreCancion != "".
-     * @return La canciÛn con el nombre dado. Si no existe una canciÛn con ese nombre se retorna null.
+     * Busca una canci√≥n con el nombre recibido por par√≥metro en la lista de canciones. <br>
+     * <b>pre: </b> La lista de canciones est√≥ inicializada.
+     * @param pNombreCancion Nombre de la canci√≥n. pNombreCancion != null && pNombreCancion != "".
+     * @return La canci√≥n con el nombre dado. Si no existe una canci√≥n con ese nombre se retorna null.
      */
     public Cancion buscarCancion( String pNombreCancion )
     {
@@ -82,11 +82,11 @@ public class ListaReproduccion
     }
 
     /**
-     * Agrega una canciÛn a la lista de canciones en la lista de reproducciÛn. <br>
-     * <b>pre: </b> La lista de canciones est· inicializada. <br>
-     * No existe una canciÛn con el nombre dado. <br>
-     * <b> post: </b> Se agregÛ la canciÛn a la lista de reproducciÛn.
-     * @param pCancion CanciÛn que se va a agregar. pCancion != null.
+     * Agrega una canci√≥n a la lista de canciones en la lista de reproducci√≥n. <br>
+     * <b>pre: </b> La lista de canciones est√≥ inicializada. <br>
+     * No existe una canci√≥n con el nombre dado. <br>
+     * <b> post: </b> Se agreg√≥ la canci√≥n a la lista de reproducci√≥n.
+     * @param pCancion Canci√≥n que se va a agregar. pCancion != null.
      */
     public void agregarCancion( Cancion pCancion )
     {
@@ -94,11 +94,11 @@ public class ListaReproduccion
     }
 
     /**
-     * Elimina la canciÛn que tiene el nombre dado por par·metro.<br>
-     * <b>pre: </b> La lista de canciones est· inicializada.<br>
-     * La canciÛn con el nombre dado existe. <br>
-     * <b> post: </b> Se eliminÛ la canciÛn con el nombre dado de la lista de canciones.
-     * @param pNombreCancion Nombre de la canciÛn a eliminar. pNombreCancion != null && pNombreCancion != "".
+     * Elimina la canci√≥n que tiene el nombre dado por par√≥metro.<br>
+     * <b>pre: </b> La lista de canciones est√≥ inicializada.<br>
+     * La canci√≥n con el nombre dado existe. <br>
+     * <b> post: </b> Se elimin√≥ la canci√≥n con el nombre dado de la lista de canciones.
+     * @param pNombreCancion Nombre de la canci√≥n a eliminar. pNombreCancion != null && pNombreCancion != "".
      */
     public void eliminarCancion( String pNombreCancion )
     {

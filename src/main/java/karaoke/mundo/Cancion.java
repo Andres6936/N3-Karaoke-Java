@@ -1,4 +1,4 @@
-package edu.jabs.karaoke.mundo;
+package karaoke.mundo;
 
 public class Cancion {
 
@@ -7,27 +7,27 @@ public class Cancion {
     // -----------------------------------------------------------------
 
     /**
-     * Nombre de la canci髇.
+     * Nombre de la canci贸n.
      */
     private String nombre;
     
     /**
-     * Duraci髇 de la canci髇.
+     * Duraci贸n de la canci贸n.
      */
     private int duracion;
     
     /**
-     * Letra de la canci髇.
+     * Letra de la canci贸n.
      */
     private String letra;
     
     /**
-     * Dificultad de la canci髇.
+     * Dificultad de la canci贸n.
      */
     private int dificultad;
     
     /**
-     * Ruta de la canci髇.
+     * Ruta de la canci贸n.
      */
     private String ruta;
     
@@ -38,13 +38,13 @@ public class Cancion {
     // -----------------------------------------------------------------
     
     /**
-     * Crea una canci髇. <br>
-     * <b>post: </b> Se inicializaron los atributos nombre, duraci髇, letra, dificultad y ruta con los valores dados por par醡etro. <br>
-     * @param pNombre Nombre de la canci髇. pNombre != null y pNombre != "".
-     * @param pDuracion Duraci髇 de la canci髇. pDuracion > 0 
-     * @param pLetra Letra de la canci髇. pLetra != null y pLetra != "".
-     * @param pDificultad Dificultad de la canci髇. pDificultad > 0 
-     * @param pRuta Ruta de la canci髇. pRuta != null y pRuta != "".
+     * Crea una canci贸n. <br>
+     * <b>post: </b> Se inicializaron los atributos nombre, duraci贸n, letra, dificultad y ruta con los valores dados por par贸metro. <br>
+     * @param pNombre Nombre de la canci贸n. pNombre != null y pNombre != "".
+     * @param pDuracion Duraci贸n de la canci贸n. pDuracion > 0
+     * @param pLetra Letra de la canci贸n. pLetra != null y pLetra != "".
+     * @param pDificultad Dificultad de la canci贸n. pDificultad > 0
+     * @param pRuta Ruta de la canci贸n. pRuta != null y pRuta != "".
      */
     public Cancion (String pNombre, int pDuracion, String pLetra, int pDificultad, String pRuta)
     {
@@ -56,12 +56,12 @@ public class Cancion {
     }
     
     // -----------------------------------------------------------------
-    // M閠odos
+    // M贸todos
     // -----------------------------------------------------------------
 
     /**
-     * Retorna el nombre de la canci髇.
-     * @return Nombre de la canci髇.
+     * Retorna el nombre de la canci贸n.
+     * @return Nombre de la canci贸n.
      */
     public String darNombre( )
     {
@@ -69,8 +69,8 @@ public class Cancion {
     }
     
     /**
-     * Retorna la duraci髇 de la canci髇.
-     * @return Duraci髇 de la canci髇.
+     * Retorna la duraci贸n de la canci贸n.
+     * @return Duraci贸n de la canci贸n.
      */
     public int darDuracion( )
     {
@@ -78,8 +78,8 @@ public class Cancion {
     }
     
     /**
-     * Retorna la letra de la canci髇.
-     * @return Letra de la canci髇.
+     * Retorna la letra de la canci贸n.
+     * @return Letra de la canci贸n.
      */
     public String darLetra( )
     {
@@ -87,8 +87,8 @@ public class Cancion {
     }
     
     /**
-     * Retorna la dificultar de la canci髇.
-     * @return Dificultad de la duraci髇.
+     * Retorna la dificultar de la canci贸n.
+     * @return Dificultad de la duraci贸n.
      */
     public int darDificultad( )
     {
@@ -96,8 +96,8 @@ public class Cancion {
     }
     
     /**
-     * Retorna la ruta de la canci髇.
-     * @return Ruta de la canci髇.
+     * Retorna la ruta de la canci贸n.
+     * @return Ruta de la canci贸n.
      */
     public String darRuta( )
     {
@@ -105,8 +105,8 @@ public class Cancion {
     }
 	
     /**
-     * Retorna una cadena de caracteres con la informaci髇 de la canci髇.
-     * @return Cadena de caracteres con la informaci髇 de la canci髇: nombre.
+     * Retorna una cadena de caracteres con la informaci贸n de la canci贸n.
+     * @return Cadena de caracteres con la informaci贸n de la canci贸n: nombre.
      */
     public String toString()
     {

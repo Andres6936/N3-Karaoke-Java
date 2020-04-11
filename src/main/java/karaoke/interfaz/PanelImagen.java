@@ -1,6 +1,7 @@
-package edu.jabs.karaoke.interfaz;
+package karaoke.interfaz;
 
 import java.awt.Color;
+import java.io.InputStream;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -19,20 +20,23 @@ public class PanelImagen extends JPanel
 	private static final long serialVersionUID = 103L;
 
 	/**
-	 * Método constructor por defecto. Coloca la imagen del encabezado de la
-	 * aplicación.
+     * MÃ³todo constructor por defecto. Coloca la imagen del encabezado de la
+     * aplicaciÃ³n.
 	 */
     public PanelImagen( )
     {
-        JLabel imagen = new JLabel( );
-        ImageIcon icono = new ImageIcon( "data/imagenes/karaoke.png" );
         // La agrega a la etiqueta
-        imagen = new JLabel( "" );
-        imagen.setIcon( icono );
+        JLabel imagen = new JLabel( "" );
+        imagen.setIcon( load( "imagenes/karaoke.png" ) );
         add( imagen );
 
         setBackground( Color.WHITE );
         setBorder( new LineBorder( Color.BLACK ) );
     }
 
+    private ImageIcon load( final String path )
+    {
+        InputStream file = getClass( ).getClassLoader( ).getResourceAsStream( path );
+        return new ImageIcon( String.valueOf( file ) );
+    }
 }

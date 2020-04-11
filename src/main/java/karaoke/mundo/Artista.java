@@ -1,9 +1,9 @@
-package edu.jabs.karaoke.mundo;
+package karaoke.mundo;
 
 import java.util.ArrayList;
 
 /**
- * Artista intérprete de las canciones del karaoke.
+ * Artista intÃ³rprete de las canciones del karaoke.
  */
 public class Artista
 {
@@ -12,27 +12,27 @@ public class Artista
     // -----------------------------------------------------------------
 
     /**
-     * Representa la categoría Rock.
+     * Representa la categorÃ³a Rock.
      */
     public static final String ROCK = "Rock";
 
     /**
-     * Representa la categoría Pop.
+     * Representa la categorÃ³a Pop.
      */
     public final static String POP = "Pop";
 
     /**
-     * Representa la categoría Fusión latina.
+     * Representa la categorÃ³a FusiÃ³n latina.
      */
-    public final static String FUSION_LATINA = "Fusión latina";
+    public final static String FUSION_LATINA = "FusiÃ³n latina";
 
     /**
-     * Representa la categoría Electro house.
+     * Representa la categorÃ³a Electro house.
      */
     public final static String ELECTRO_HOUSE = "Electro house";
 
     /**
-     * Representa la categoría Dubstep.
+     * Representa la categorÃ³a Dubstep.
      */
     public final static String DUBSTEP = "Dubstep";
 
@@ -46,7 +46,7 @@ public class Artista
     private String nombre;
 
     /**
-     * Categoría del artista.
+     * CategorÃ³a del artista.
      */
     private String categoria;
 
@@ -58,7 +58,7 @@ public class Artista
     /**
      * Lista de canciones del artista.
      */
-    // TODO Parte2 PuntoA: Declare la asociación canciones como una contenedora de tipo variable.
+    // TODO Parte2 PuntoA: Declare la asociaciÃ³n canciones como una contenedora de tipo variable.
     private ArrayList<Cancion> canciones;
 
     // -----------------------------------------------------------------
@@ -67,10 +67,10 @@ public class Artista
 
     /**
      * Crea un artista. <br>
-     * <b>post: </b> Se inicializaron los atributos nombre, categoría e imagen con los valores dados por parámetro. <br>
-     * Se inicializó caNombre del artista. pNombre != null y pNombre != "".nciones como una lista vacía.
+     * <b>post: </b> Se inicializaron los atributos nombre, categorÃ³a e imagen con los valores dados por parÃ³metro. <br>
+     * Se inicializÃ³ caNombre del artista. pNombre != null y pNombre != "".nciones como una lista vacÃ³a.
      * @param pNombre Nombre del artista. pNombre != null y pNombre != "".
-     * @param pCategoria Categoría del artista. pCategoria pertenece a {Artista.ROCK, Artista.POP, Artista.FUSION_LATINA, Artista.ELECTRO_HOUSE}.
+     * @param pCategoria CategorÃ³a del artista. pCategoria pertenece a {Artista.ROCK, Artista.POP, Artista.FUSION_LATINA, Artista.ELECTRO_HOUSE}.
      * @param pImagen Ruta del archivo con la imagen del artista. pImagen != null y pImagen != "".
      */
     public Artista( String pNombre, String pCategoria, String pImagen )
@@ -79,12 +79,12 @@ public class Artista
         categoria = pCategoria;
         imagen = pImagen;
 
-        // TODO Parte2 PuntoB: Inicialice la contenedora de canciones según la documentación dada.
+        // TODO Parte2 PuntoB: Inicialice la contenedora de canciones segÃ³n la documentaciÃ³n dada.
         canciones = new ArrayList<Cancion>( );
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // MÃ³todos
     // -----------------------------------------------------------------
 
     /**
@@ -97,8 +97,8 @@ public class Artista
     }
 
     /**
-     * Retorna la categoría del artista.
-     * @return Categoría del artista.
+     * Retorna la categorÃ³a del artista.
+     * @return CategorÃ³a del artista.
      */
     public String darCategoria( )
     {
@@ -120,14 +120,14 @@ public class Artista
      */
     public ArrayList<Cancion> darCanciones( )
     {
-        // TODO Parte2 PuntoC: Complete el método según la documentación dada.
+        // TODO Parte2 PuntoC: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         return canciones;
     }
 
     /**
-     * Busca la canción con mayor dificultad. Si existen varias canciones con la misma dificultad retorna la primera canción encontrada.<br>
+     * Busca la canciÃ³n con mayor dificultad. Si existen varias canciones con la misma dificultad retorna la primera canciÃ³n encontrada.<br>
      * <b> pre: </b> La lista de canciones ha sido inicializada.
-     * @return La canción del artista con mayor dificultad. Si el artista no tiene ninguna canción se retorna null.
+     * @return La canciÃ³n del artista con mayor dificultad. Si el artista no tiene ninguna canciÃ³n se retorna null.
      */
     public Cancion darCancionMasDificil( )
     {
@@ -149,9 +149,9 @@ public class Artista
     }
 
     /**
-     * Busca la canción con menor dificultad. Si existen varias canciones con la misma dificultad retorna la primera canción encontrada.<br>
+     * Busca la canciÃ³n con menor dificultad. Si existen varias canciones con la misma dificultad retorna la primera canciÃ³n encontrada.<br>
      * <b> pre: </b> La lista de canciones ha sido inicializada.
-     * @return La canción del artista con menor dificultad. Si el artista no tiene ninguna canción se retorna null.
+     * @return La canciÃ³n del artista con menor dificultad. Si el artista no tiene ninguna canciÃ³n se retorna null.
      */
     public Cancion darCancionMasFacil( )
     {
@@ -173,13 +173,13 @@ public class Artista
     }
 
     /**
-     * Busca la canción con mayor duración. Si existen varias canciones con la misma duración retorna la primera canción encontrada.<br>
+     * Busca la canciÃ³n con mayor duraciÃ³n. Si existen varias canciones con la misma duraciÃ³n retorna la primera canciÃ³n encontrada.<br>
      * <b> pre: </b> La lista de canciones ha sido inicializada.
-     * @return La canción del artista con mayor duración. Si el artista no tiene ninguna canción se retorna null.
+     * @return La canciÃ³n del artista con mayor duraciÃ³n. Si el artista no tiene ninguna canciÃ³n se retorna null.
      */
     public Cancion darCancionMasLarga( )
     {
-        // TODO Parte2 PuntoD: Complete el método según la documentación dada.
+        // TODO Parte2 PuntoD: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         Cancion masLarga = null;
         int larga = 0;
 
@@ -198,13 +198,13 @@ public class Artista
     }
 
     /**
-     * Busca la canción con menor duración. Si existen varias canciones con la misma duración retorna la primera canción encontrada.<br>
+     * Busca la canciÃ³n con menor duraciÃ³n. Si existen varias canciones con la misma duraciÃ³n retorna la primera canciÃ³n encontrada.<br>
      * <b> pre: </b> La lista de canciones ha sido inicializada.
-     * @return La canción del artista con menor duración. Si el artista no tiene ninguna canción se retorna null.
+     * @return La canciÃ³n del artista con menor duraciÃ³n. Si el artista no tiene ninguna canciÃ³n se retorna null.
      */
     public Cancion darCancionMasCorta( )
     {
-        // TODO Parte2 PuntoE: Complete el método según la documentación dada.
+        // TODO Parte2 PuntoE: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         Cancion masCorta = null;
         int corta = 0;
         if( !canciones.isEmpty( ) )
@@ -227,14 +227,14 @@ public class Artista
     }
 
     /**
-     * Busca una canción con el nombre dado.<br>
+     * Busca una canciÃ³n con el nombre dado.<br>
      * <b> pre: </b> La lista de canciones ha sido inicializada.
-     * @param pNombre Nombre de la canción. pNombre != null y pNombre != "".
-     * @return La canción con el nombre dado. Si no existe una canción con ese nombre se retorna null.
+     * @param pNombre Nombre de la canciÃ³n. pNombre != null y pNombre != "".
+     * @return La canciÃ³n con el nombre dado. Si no existe una canciÃ³n con ese nombre se retorna null.
      */
     public Cancion buscarCancion( String pNombre )
     {
-        // TODO Parte2 PuntoF: Complete el método según la documentación dada.
+        // TODO Parte2 PuntoF: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         boolean encontrado = false;
         Cancion cancionEncontrada = null;
         for( int i = 0; i < canciones.size( ) && !encontrado; i++ )
@@ -249,19 +249,19 @@ public class Artista
     }
 
     /**
-     * Agrega una nueva canción a la lista de canciones del artista. Si ya existe una canción del artista con el mismo nombre, la canción no puede ser agregada.<br>
+     * Agrega una nueva canciÃ³n a la lista de canciones del artista. Si ya existe una canciÃ³n del artista con el mismo nombre, la canciÃ³n no puede ser agregada.<br>
      * <b> pre: </b> La lista de canciones ha sido inicializada.<br>
-     * <b> post: </b> Se ha agregado una nueva canción a la lista de canciones.
-     * @param pNombre Nombre de la canción. pNombre != null y pNombre != "".
-     * @param pDuracion Duración en segundos de la canción. pDuracion > 0.
-     * @param pLetra Letra de la canción. pLetra != null y pLetra != "".
-     * @param pDificultad Dificultad de la canción. pDificultad >= 1 y pDificultad <= 10.
-     * @param pRuta Ruta del archivo con la canción. pRuta != null y pRuta != "".
-     * @return Verdadero si la canción fue agregada, falso de lo contrario.
+     * <b> post: </b> Se ha agregado una nueva canciÃ³n a la lista de canciones.
+     * @param pNombre Nombre de la canciÃ³n. pNombre != null y pNombre != "".
+     * @param pDuracion DuraciÃ³n en segundos de la canciÃ³n. pDuracion > 0.
+     * @param pLetra Letra de la canciÃ³n. pLetra != null y pLetra != "".
+     * @param pDificultad Dificultad de la canciÃ³n. pDificultad >= 1 y pDificultad <= 10.
+     * @param pRuta Ruta del archivo con la canciÃ³n. pRuta != null y pRuta != "".
+     * @return Verdadero si la canciÃ³n fue agregada, falso de lo contrario.
      */
     public boolean agregarCancion( String pNombre, int pDuracion, String pLetra, int pDificultad, String pRuta )
     {
-        // TODO Parte2 PuntoG: Complete el método según la documentación dada.
+        // TODO Parte2 PuntoG: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         if( buscarCancion( pNombre ) == null )
         {
             canciones.add( new Cancion( pNombre, pDuracion, pLetra, pDificultad, pRuta ) );
@@ -270,8 +270,8 @@ public class Artista
         return false;
     }
     /**
-     * Retorna una cadena de caracteres con la información del artista.
-     * @return Cadena de caracteres con la información del artista: nombre.
+     * Retorna una cadena de caracteres con la informaciÃ³n del artista.
+     * @return Cadena de caracteres con la informaciÃ³n del artista: nombre.
      */
     @Override
     public String toString( )

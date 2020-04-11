@@ -1,4 +1,4 @@
-package edu.jabs.karaoke.interfaz;
+package karaoke.interfaz;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,10 +9,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
-import edu.jabs.karaoke.mundo.Artista;
+import karaoke.mundo.Artista;
 
 /**
- * Panel con operaciones de b˙squeda y extensiÛn.
+ * Panel con operaciones de b√≥squeda y extensi√≥n.
  */
 public class PanelOpciones extends JPanel implements ActionListener
 {
@@ -36,37 +36,37 @@ public class PanelOpciones extends JPanel implements ActionListener
     private static final String TODAS = "Lista de canciones";
 
     /**
-     * Representa el comando buscar canciÛn m·s f·cil.
+     * Representa el comando buscar canci√≥n m√≥s f√≥cil.
      */
-    private static final String MAS_FACIL = "CanciÛn m·s f·cil";
+    private static final String MAS_FACIL = "Canci√≥n m√≥s f√≥cil";
 
     /**
-     * Representa el comando buscar canciÛn m·s difÌcil.
+     * Representa el comando buscar canci√≥n m√≥s dif√≥cil.
      */
-    private static final String MAS_DIFICIL = "CanciÛn m·s difÌcil";
+    private static final String MAS_DIFICIL = "Canci√≥n m√≥s dif√≥cil";
 
     /**
-     * Representa el comando buscar canciÛn m·s larga.
+     * Representa el comando buscar canci√≥n m√≥s larga.
      */
-    private static final String MAS_LARGA = "CanciÛn m·s larga";
+    private static final String MAS_LARGA = "Canci√≥n m√≥s larga";
 
     /**
-     * Representa el comando buscar canciÛn m·s corta.
+     * Representa el comando buscar canci√≥n m√≥s corta.
      */
-    private static final String MAS_CORTA = "CanciÛn m·s corta";
+    private static final String MAS_CORTA = "Canci√≥n m√≥s corta";
 
     /**
-     * Representa el comando buscar artista con m·s canciones.
+     * Representa el comando buscar artista con m√≥s canciones.
      */
-    private static final String MAS_CANCIONES = "Artista con m·s canciones";
+    private static final String MAS_CANCIONES = "Artista con m√≥s canciones";
 
     /**
-     * Representa el comando opciÛn 1.
+     * Representa el comando opci√≥n 1.
      */
     private static final String OPCION_1 = "OPCION_1";
 
     /**
-     * Representa el comando opciÛn 2.
+     * Representa el comando opci√≥n 2.
      */
     private static final String OPCION_2 = "OPCION_2";
 
@@ -75,7 +75,7 @@ public class PanelOpciones extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Ventana principal de la aplicaciÛn.
+     * Ventana principal de la aplicaci√≥n.
      */
     private InterfazKaraoke principal;
 
@@ -84,22 +84,22 @@ public class PanelOpciones extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * BotÛn para realizar b˙squedas.
+     * Bot√≥n para realizar b√≥squedas.
      */
     private JButton btnBuscar;
 
     /**
-     * BotÛn para mostrar todas las canciones del karaoke.
+     * Bot√≥n para mostrar todas las canciones del karaoke.
      */
     private JButton btnTodas;
 
     /**
-     * BotÛn para la opciÛn 1.
+     * Bot√≥n para la opci√≥n 1.
      */
     private JButton btnOpcion1;
 
     /**
-     * BotÛn para la opciÛn 2.
+     * Bot√≥n para la opci√≥n 2.
      */
     private JButton btnOpcion2;
 
@@ -118,38 +118,38 @@ public class PanelOpciones extends JPanel implements ActionListener
         setBorder( new TitledBorder( "Opciones" ) );
         setLayout( new GridLayout( 1, 4 ) );
 
-        // BotÛn opciÛn buscar
+        // Bot√≥n opci√≥n buscar
         btnBuscar = new JButton( BUSCAR );
         btnBuscar.setActionCommand( BUSCAR );
         btnBuscar.addActionListener( this );
         add( btnBuscar );
 
-        // BotÛn opciÛn todas
+        // Bot√≥n opci√≥n todas
         btnTodas = new JButton( TODAS );
         btnTodas.setActionCommand( TODAS );
         btnTodas.addActionListener( this );
         add( btnTodas );
 
-        // BotÛn opciÛn 1
-        btnOpcion1 = new JButton( "OpciÛn 1" );
+        // Bot√≥n opci√≥n 1
+        btnOpcion1 = new JButton( "Opci√≥n 1" );
         btnOpcion1.setActionCommand( OPCION_1 );
         btnOpcion1.addActionListener( this );
         add( btnOpcion1 );
 
-        // BotÛn opciÛn 2
-        btnOpcion2 = new JButton( "OpciÛn 2" );
+        // Bot√≥n opci√≥n 2
+        btnOpcion2 = new JButton( "Opci√≥n 2" );
         btnOpcion2.setActionCommand( OPCION_2 );
         btnOpcion2.addActionListener( this );
         add( btnOpcion2 );
     }
 
     // -----------------------------------------------------------------
-    // MÈtodos
+    // M√≥todos
     // -----------------------------------------------------------------
 
     /**
      * Manejo de los eventos de los botones.
-     * @param pEvento AcciÛn que generÛ el evento. pEvento != null.
+     * @param pEvento Acci√≥n que gener√≥ el evento. pEvento != null.
      */
     public void actionPerformed( ActionEvent pEvento )
     {
@@ -187,7 +187,7 @@ public class PanelOpciones extends JPanel implements ActionListener
         else if( comando.equals( TODAS ) )
         {
             String[] categorias = { Artista.ROCK, Artista.POP, Artista.FUSION_LATINA, Artista.ELECTRO_HOUSE };
-            String c = ( String )JOptionPane.showInputDialog( null, "CategorÌa: ", TODAS, JOptionPane.QUESTION_MESSAGE, null, categorias, Artista.ROCK );
+            String c = ( String ) JOptionPane.showInputDialog( null, "Categor√≥a: ", TODAS, JOptionPane.QUESTION_MESSAGE, null, categorias, Artista.ROCK );
             if( c != null )
             {
                 String categoria = c;

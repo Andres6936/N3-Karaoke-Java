@@ -1,4 +1,4 @@
-package edu.jabs.karaoke.interfaz;
+package karaoke.interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,11 +19,11 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import edu.jabs.karaoke.mundo.Artista;
-import edu.jabs.karaoke.mundo.Cancion;
+import karaoke.mundo.Artista;
+import karaoke.mundo.Cancion;
 
 /**
- * Panel con la información de un artista.
+ * Panel con la informaciÃ³n de un artista.
  *
  */
 public class PanelArtista extends JPanel implements ActionListener
@@ -39,9 +39,9 @@ public class PanelArtista extends JPanel implements ActionListener
 	private static final long serialVersionUID = 100L;
 
 	/**
-	 * Representa la comando de cambio de categoría.
+     * Representa la comando de cambio de categorÃ³a.
 	 */
-    private final static String CAMBIO_CATEGORIA = "Cambio categoría";
+    private final static String CAMBIO_CATEGORIA = "Cambio categorÃ³a";
 
     /**
      * Representa el comando para cambiar de artista.
@@ -49,21 +49,21 @@ public class PanelArtista extends JPanel implements ActionListener
     private final static String CAMBIO_ARTISTA = "Cambio artista";
 
     /**
-     * Representa el comando para cambiar de canción.
+     * Representa el comando para cambiar de canciÃ³n.
      */
-    private final static String CAMBIO_CANCION = "Cambio canción";
+    private final static String CAMBIO_CANCION = "Cambio canciÃ³n";
 
     /**
-     * Representa el comando agregar canción.
+     * Representa el comando agregar canciÃ³n.
      */
-    private static final String AGREGAR_CANCION = "Agregar canción";
+    private static final String AGREGAR_CANCION = "Agregar canciÃ³n";
 
     // -----------------------------------------------------------------
     // Atributos
     // -----------------------------------------------------------------
 
     /**
-     * Ventana principal de la aplicación
+     * Ventana principal de la aplicaciÃ³n
      */
     private InterfazKaraoke principal;
 
@@ -82,7 +82,7 @@ public class PanelArtista extends JPanel implements ActionListener
     private JLabel lblImagen;
 
     /**
-     * Etiqueta de la categoría.
+     * Etiqueta de la categorÃ³a.
      */
     private JLabel lblCategoria;
 
@@ -92,12 +92,12 @@ public class PanelArtista extends JPanel implements ActionListener
     private JLabel lblArtistas;
 
     /**
-     * Botón para agregar una canción.
+     * BotÃ³n para agregar una canciÃ³n.
      */
     private JButton btnAgregarCancion;
 
     /**
-     * Combo box con las categorías del karaoke.
+     * Combo box con las categorÃ³as del karaoke.
      */
 	private JComboBox< String > cbCategoria;
 
@@ -107,7 +107,7 @@ public class PanelArtista extends JPanel implements ActionListener
 	private JComboBox< Cancion > cbCanciones;
 
     /**
-     * Combo box con los artistas de una categoría.
+     * Combo box con los artistas de una categorÃ³a.
      */
 	private JComboBox< Artista > cbArtistas;
 
@@ -116,8 +116,8 @@ public class PanelArtista extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Crea el panel con la información del artista.
-     * @param pVentana Ventana principal de la aplicación. pVentana != null.
+     * Crea el panel con la informaciÃ³n del artista.
+     * @param pVentana Ventana principal de la aplicaciÃ³n. pVentana != null.
      */
     public PanelArtista( InterfazKaraoke pVentana )
     {
@@ -130,7 +130,7 @@ public class PanelArtista extends JPanel implements ActionListener
         JPanel informacion = new JPanel( );
         informacion.setLayout( new GridLayout( 1, 4 ) );
 
-        lblCategoria = new JLabel( "Categorías:" );
+        lblCategoria = new JLabel( "CategorÃ³as:" );
         lblArtistas = new JLabel( "Artistas" );
 
         String[] categorias = { Artista.ROCK, Artista.POP, Artista.FUSION_LATINA, Artista.ELECTRO_HOUSE, Artista.DUBSTEP };
@@ -184,7 +184,7 @@ public class PanelArtista extends JPanel implements ActionListener
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // MÃ³todos
     // -----------------------------------------------------------------
     /**
      * Actualiza el combo box de artistas.
@@ -201,7 +201,7 @@ public class PanelArtista extends JPanel implements ActionListener
     }
 
     /**
-     * Actualiza la información del artista seleccionado.
+     * Actualiza la informaciÃ³n del artista seleccionado.
      */
     public void actualizarArtista( )
     {
@@ -228,8 +228,8 @@ public class PanelArtista extends JPanel implements ActionListener
     }
 
     /**
-     * Retorna la categoría seleccionada.
-     * @return Categoría seleccionada.
+     * Retorna la categorÃ³a seleccionada.
+     * @return CategorÃ³a seleccionada.
      */
     public String darCategoriaSeleccionada( )
     {
@@ -249,7 +249,7 @@ public class PanelArtista extends JPanel implements ActionListener
 
     /**
      * Manejo de los eventos de los botones.
-     * @param pEvento Acción que generó el evento. pEvento != null.
+     * @param pEvento AcciÃ³n que generÃ³ el evento. pEvento != null.
      */
     @Override
     public void actionPerformed( ActionEvent pEvento )

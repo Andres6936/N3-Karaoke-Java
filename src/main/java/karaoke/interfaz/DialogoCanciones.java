@@ -1,4 +1,4 @@
-package edu.jabs.karaoke.interfaz;
+package karaoke.interfaz;
 
 import java.awt.BorderLayout;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 
 /**
- * Di醠ogo con la lista de canciones de una categor韆 del karaoke.
+ * Di贸logo con la lista de canciones de una categor贸a del karaoke.
  */
 public class DialogoCanciones extends JDialog
 {
@@ -22,9 +22,9 @@ public class DialogoCanciones extends JDialog
 	private static final long serialVersionUID = 107L;
 
 	/**
-	 * Constructor del di醠ogo con la lista de canciones.
-	 * 
-	 * @param pCategoria Nombre de la categor韆.
+     * Constructor del di贸logo con la lista de canciones.
+	 *
+     * @param pCategoria Nombre de la categor贸a.
 	 * @param pCanciones Lista de canciones. pCanciones != null
 	 */
 	public DialogoCanciones( String pCategoria, ArrayList pCanciones )

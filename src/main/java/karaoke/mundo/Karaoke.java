@@ -1,4 +1,4 @@
-package edu.jabs.karaoke.mundo;
+package karaoke.mundo;
 
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ public class Karaoke
     /**
      * Cantidad de artistas del karaoke
      */
-    // TODO Parte3 PuntoA: Agregue la constante CANTIDAD_ARTISTAS que determina el número de artistas en el karaoke.
+    // TODO Parte3 PuntoA: Agregue la constante CANTIDAD_ARTISTAS que determina el nÃ³mero de artistas en el karaoke.
     // En el modelo del mundo (ModeloConceptual.jpg) se encuentra el tipo y valor exacto de la constante.
     public final static int CANTIDAD_ARTISTAS = 10;
 
@@ -23,15 +23,15 @@ public class Karaoke
     // -----------------------------------------------------------------
 
     /**
-     * Lista que contiene las listas de reproducción del karaoke.
+     * Lista que contiene las listas de reproducciÃ³n del karaoke.
      */
-    // TODO Parte3 PuntoB: Declare la asociación listasDeReproduccion como una contenedora de tipo variable.
+    // TODO Parte3 PuntoB: Declare la asociaciÃ³n listasDeReproduccion como una contenedora de tipo variable.
     private ArrayList<ListaReproduccion> listasDeReproduccion;
 
     /**
      * Lista de artistas del karaoke.
      */
-    // TODO Parte3 PuntoC: Declare la asociación artistas como una contenedora de tamaño fijo.
+    // TODO Parte3 PuntoC: Declare la asociaciÃ³n artistas como una contenedora de tamaÃ³o fijo.
     private Artista artistas[];
 
     // -----------------------------------------------------------------
@@ -40,17 +40,17 @@ public class Karaoke
 
     /**
      * Constructor del karaoke. <br>
-     * La lista de artistas quedó inicializada con los siguientes valores:<br>
-     * Artista posición 0 - Nombre: Adele, Categoría: Pop, Ruta de la imagen:"Adele.jpg". <br>
-     * Artista posición 1 - Nombre: AC/DC, Categoría: Rock, Ruta de la imagen:"AC_DC.jpg". <br>
-     * Artista posición 2 - Nombre: Calvin Harris, Categoría: Electro house, Ruta de la imagen:"CalvinHarris.jpg". <br>
-     * Artista posición 3 - Nombre: ChocQuibTown, Categoría: Fusión latina, Ruta de la imagen:"Chocquibtown.jpg". <br>
-     * Artista posición 4 - Nombre: Michael Jackson, Categoría: Pop, Ruta de la imagen:"MichaelJackson.jpg". <br>
-     * Artista posición 5 - Nombre: Rihanna, Categoría: Pop, Ruta de la imagen:"Rihanna.jpg". <br>
-     * Artista posición 6 - Nombre: Bomba Estéreo, Categoría: Fusión latina, Ruta de la imagen:"BombaEstereo.jpg". <br>
-     * Artista posición 7 - Nombre: Green Day, Categoría: Rock, Ruta de la imagen:"GreenDay.jpg". <br>
-     * Artista posición 8 - Nombre: Bon Jovi, Categoría: Rock, Ruta de la imagen:"BonJovi.jpg". <br>
-     * Se inicializó la lista que contiene las listas de reproducción.
+     * La lista de artistas quedÃ³ inicializada con los siguientes valores:<br>
+     * Artista posiciÃ³n 0 - Nombre: Adele, CategorÃ³a: Pop, Ruta de la imagen:"Adele.jpg". <br>
+     * Artista posiciÃ³n 1 - Nombre: AC/DC, CategorÃ³a: Rock, Ruta de la imagen:"AC_DC.jpg". <br>
+     * Artista posiciÃ³n 2 - Nombre: Calvin Harris, CategorÃ³a: Electro house, Ruta de la imagen:"CalvinHarris.jpg". <br>
+     * Artista posiciÃ³n 3 - Nombre: ChocQuibTown, CategorÃ³a: FusiÃ³n latina, Ruta de la imagen:"Chocquibtown.jpg". <br>
+     * Artista posiciÃ³n 4 - Nombre: Michael Jackson, CategorÃ³a: Pop, Ruta de la imagen:"MichaelJackson.jpg". <br>
+     * Artista posiciÃ³n 5 - Nombre: Rihanna, CategorÃ³a: Pop, Ruta de la imagen:"Rihanna.jpg". <br>
+     * Artista posiciÃ³n 6 - Nombre: Bomba EstÃ³reo, CategorÃ³a: FusiÃ³n latina, Ruta de la imagen:"BombaEstereo.jpg". <br>
+     * Artista posiciÃ³n 7 - Nombre: Green Day, CategorÃ³a: Rock, Ruta de la imagen:"GreenDay.jpg". <br>
+     * Artista posiciÃ³n 8 - Nombre: Bon Jovi, CategorÃ³a: Rock, Ruta de la imagen:"BonJovi.jpg". <br>
+     * Se inicializÃ³ la lista que contiene las listas de reproducciÃ³n.
      */
     public Karaoke( )
     {
@@ -61,20 +61,20 @@ public class Karaoke
         artistas[ 2 ] = new Artista( "Calvin Harris", Artista.ELECTRO_HOUSE, "./data/imagenes/CalvinHarris.jpg" );
         artistas[ 3 ] = new Artista( "ChocQuibTown", Artista.FUSION_LATINA, "./data/imagenes/Chocquibtown.jpg" );
         artistas[ 4 ] = new Artista( "Michael Jackson", Artista.POP, "./data/imagenes/MichaelJackson.jpg" );
-        // TODO Parte3 PuntoD: Asigne las posiciones 5, 6, 7, 8 según la documentación dada.
+        // TODO Parte3 PuntoD: Asigne las posiciones 5, 6, 7, 8 segÃ³n la documentaciÃ³n dada.
         artistas[ 5 ] = new Artista( "Rihanna", Artista.POP, "./data/imagenes/Rihanna.jpg" );
-        artistas[ 6 ] = new Artista( "Bomba Estéreo", Artista.FUSION_LATINA, "./data/imagenes/BombaEstereo.jpg" );
+        artistas[ 6 ] = new Artista( "Bomba EstÃ³reo", Artista.FUSION_LATINA, "./data/imagenes/BombaEstereo.jpg" );
         artistas[ 7 ] = new Artista( "Green Day", Artista.ROCK, "./data/imagenes/GreenDay.jpg" );
         artistas[ 8 ] = new Artista( "Bon Jovi", Artista.ROCK, "./data/imagenes/BonJovi.jpg" );
 
         artistas[ 9 ] = new Artista( "Sia", Artista.POP, "./data/imagenes/Sia.jpg" );
 
-        // TODO Parte2 PuntoE: Inicialice la contenedora de listasDeReproduccion según la documentación dada.
+        // TODO Parte2 PuntoE: Inicialice la contenedora de listasDeReproduccion segÃ³n la documentaciÃ³n dada.
         listasDeReproduccion = new ArrayList<ListaReproduccion>( );
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // MÃ³todos
     // -----------------------------------------------------------------
 
     /**
@@ -84,26 +84,26 @@ public class Karaoke
      */
     public Artista[] darArtistas( )
     {
-        // TODO Parte3 PuntoF: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoF: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         return artistas;
     }
 
     /**
-     * Retorna las listas de reproducción del karaoke. <br>
-     * <b> pre: </b> El vector de listas de reproducción se ha inicializado.
-     * @return Lista que contiene las listas de reproducción del karaoke.
+     * Retorna las listas de reproducciÃ³n del karaoke. <br>
+     * <b> pre: </b> El vector de listas de reproducciÃ³n se ha inicializado.
+     * @return Lista que contiene las listas de reproducciÃ³n del karaoke.
      */
 	public ArrayList< ListaReproduccion > darListasDeReproduccion( )
     {
-        // TODO Parte3 PuntoG: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoG: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         return listasDeReproduccion;
     }
 
     /**
-     * Retorna los artistas de una categoría dada. <br>
+     * Retorna los artistas de una categorÃ³a dada. <br>
      * <b> pre: </b> El arreglo de artistas ha sido inicializado y los artistas creados.
-     * @param pNombre Nombre de la categoría. pNombre pertenece a {Artista.ROCK, Artista.POP, Artista.FUSION_LATINA, Artista.ELECTRO_HOUSE}.
-     * @return Lista con los artistas de la categoría dada.
+     * @param pNombre Nombre de la categorÃ³a. pNombre pertenece a {Artista.ROCK, Artista.POP, Artista.FUSION_LATINA, Artista.ELECTRO_HOUSE}.
+     * @return Lista con los artistas de la categorÃ³a dada.
      */
 	public ArrayList< Artista > darArtistasCategoria( String pNombre )
     {
@@ -123,10 +123,10 @@ public class Karaoke
     }
 
     /**
-     * Retorna una lista con todas las canciones de la categoría con el nombre dado. <br>
+     * Retorna una lista con todas las canciones de la categorÃ³a con el nombre dado. <br>
      * <b> pre: </b> El arreglo de artistas ha sido inicializado y los artistas creados.
-     * @param pNombre Nombre de la categoría. pNombre pertenece a {Artista.ROCK, Artista.POP, Artista.FUSION_LATINA, Artista.ELECTRO_HOUSE}.
-     * @return Lista con todas las canciones de una categoría.
+     * @param pNombre Nombre de la categorÃ³a. pNombre pertenece a {Artista.ROCK, Artista.POP, Artista.FUSION_LATINA, Artista.ELECTRO_HOUSE}.
+     * @return Lista con todas las canciones de una categorÃ³a.
      */
 	public ArrayList< Cancion > darCancionesCategoria( String pNombre )
     {
@@ -145,7 +145,7 @@ public class Karaoke
     }
 
     /**
-     * Retorna la lista de canciones de un artista con el nombre recibido por parámetro. <br>
+     * Retorna la lista de canciones de un artista con el nombre recibido por parÃ³metro. <br>
      * <b> pre: </b> El arreglo de artistas ha sido inicializado y el artista existe.
      * @param pNombre Nombre del artista. pNombre != null y pNombre != "".
      * @return La lista de canciones del artista.
@@ -159,11 +159,11 @@ public class Karaoke
     }
 
     /**
-     * Busca la canción con mayor dificultad. <br>
+     * Busca la canciÃ³n con mayor dificultad. <br>
      * <b> pre: </b> El arreglo de artistas ha sido inicializado y los artistas han sido creados.
-     * @return La canción con mayor dificultad. <br>
-     *         Si ningún artista tiene canciones se retorna null.<br>
-     *         Si existen varias canciones con la misma dificultad retorna la primera canción encontrada.
+     * @return La canciÃ³n con mayor dificultad. <br>
+     *         Si ningÃ³n artista tiene canciones se retorna null.<br>
+     *         Si existen varias canciones con la misma dificultad retorna la primera canciÃ³n encontrada.
      */
     public Cancion darCancionMasDificil( )
     {
@@ -189,11 +189,11 @@ public class Karaoke
     }
 
     /**
-     * Busca la canción con menor dificultad. <br>
+     * Busca la canciÃ³n con menor dificultad. <br>
      * <b> pre: </b> El arreglo de artistas ha sido inicializado y los artistas han sido creados.
-     * @return La canción con menor dificultad. <br>
-     *         Si ningún artista tiene canciones se retorna null. <br>
-     *         Si existen varias canciones con la misma dificultad retorna la primera canción encontrada.
+     * @return La canciÃ³n con menor dificultad. <br>
+     *         Si ningÃ³n artista tiene canciones se retorna null. <br>
+     *         Si existen varias canciones con la misma dificultad retorna la primera canciÃ³n encontrada.
      */
     public Cancion darCancionMasFacil( )
     {
@@ -219,15 +219,15 @@ public class Karaoke
     }
 
     /**
-     * Busca la canción con mayor duración. <br>
+     * Busca la canciÃ³n con mayor duraciÃ³n. <br>
      * <b> pre: </b> El arreglo de artistas ha sido inicializado y los artistas han sido creados.
-     * @return La canción con mayor duración. <br>
-     *         Si ningún artista tiene canciones se retorna null. <br>
-     *         Si existen varias canciones con la misma duración retorna la primera canción encontrada.
+     * @return La canciÃ³n con mayor duraciÃ³n. <br>
+     *         Si ningÃ³n artista tiene canciones se retorna null. <br>
+     *         Si existen varias canciones con la misma duraciÃ³n retorna la primera canciÃ³n encontrada.
      */
     public Cancion darCancionMasLarga( )
     {
-        // TODO Parte3 PuntoK: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoK: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         Cancion masLarga = null;
         int larga = 0;
         Cancion cancionL = null;
@@ -244,15 +244,15 @@ public class Karaoke
     }
 
     /**
-     * Busca la canción con menor duración. <br>
+     * Busca la canciÃ³n con menor duraciÃ³n. <br>
      * <b> pre: </b> El arreglo de artistas ha sido inicializado y los artistas han sido creados.
-     * @return La canción con menor duración. <br>
-     *         Si ningún artista tiene canciones se retorna null. <br>
-     *         Si existen varias canciones con la misma duración retorna la primera canción encontrada.
+     * @return La canciÃ³n con menor duraciÃ³n. <br>
+     *         Si ningÃ³n artista tiene canciones se retorna null. <br>
+     *         Si existen varias canciones con la misma duraciÃ³n retorna la primera canciÃ³n encontrada.
      */
     public Cancion darCancionMasCorta( )
     {
-        // TODO Parte3 PuntoK: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoK: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         Cancion masCorta = null;
         int corta = 0;
         Cancion cancionC = null;
@@ -272,15 +272,15 @@ public class Karaoke
     }
 
     /**
-     * Busca el artista con mayor número de canciones. <br>
+     * Busca el artista con mayor nÃ³mero de canciones. <br>
      * <b> pre: </b> El arreglo de artistas ha sido inicializado y los artistas han sido creados.
-     * @return El artista con mayor número de canciones. <br>
+     * @return El artista con mayor nÃ³mero de canciones. <br>
      *         Si no existen artistas se retorna null. <br>
-     *         Si existen varios artistas con el mismo número de canciones retorna el primer artista encontrado.
+     *         Si existen varios artistas con el mismo nÃ³mero de canciones retorna el primer artista encontrado.
      */
     public Artista darArtistaMasCanciones( )
     {
-        // TODO Parte3 PuntoK: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoK: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         Artista artistaMayorNumeroCanciones = null;
         int mayorNumeroCanciones = 0;
         for( int i = 0; i < artistas.length; i++ )
@@ -322,7 +322,7 @@ public class Karaoke
      */
     public Artista buscarArtista( String pNombre )
     {
-        // TODO Parte3 PuntoF: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoF: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         boolean encontrado = false;
         Artista artistaEncontrado = null;
         for( int i = 0; i < artistas.length && !encontrado; i++ )
@@ -337,13 +337,13 @@ public class Karaoke
     }
 
     /**
-     * Retorna una canción con el nombre dado.
-     * @param pNombreCancion Nombre de la canción. pNombreCancion != "" && pNombreCancion != null.
-     * @return La canción con el nombre dado. Si la canción no se encuentra se retorna null.
+     * Retorna una canciÃ³n con el nombre dado.
+     * @param pNombreCancion Nombre de la canciÃ³n. pNombreCancion != "" && pNombreCancion != null.
+     * @return La canciÃ³n con el nombre dado. Si la canciÃ³n no se encuentra se retorna null.
      */
     public Cancion buscarCancionEnKaraoke( String pNombreCancion )
     {
-        // TODO Parte3 PuntoK: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoK: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         boolean encontrado = false;
         Cancion cancionEncontrada = null;
         for( int i = 0; i < artistas.length && !encontrado; i++ )
@@ -358,10 +358,10 @@ public class Karaoke
     }
 
     /**
-     * Retorna el índice de la lista de reproducción que tiene el nombre dado por parámetro. <br>
-     * <b>pre:</b> La lista que contiene las listas de reproducción está inicializada. <br>
-     * @param pNombre Nombre de la lista de reproducción que se está buscando. pNombre != null && pNombre != "".
-     * @return Índice de la lista de reproducción que se está buscando, -1 en caso de no encontrarla.
+     * Retorna el Ã³ndice de la lista de reproducciÃ³n que tiene el nombre dado por parÃ³metro. <br>
+     * <b>pre:</b> La lista que contiene las listas de reproducciÃ³n estÃ³ inicializada. <br>
+     * @param pNombre Nombre de la lista de reproducciÃ³n que se estÃ³ buscando. pNombre != null && pNombre != "".
+     * @return Ã³ndice de la lista de reproducciÃ³n que se estÃ³ buscando, -1 en caso de no encontrarla.
      */
     public int buscarListaReproduccion( String pNombre )
     {
@@ -381,20 +381,20 @@ public class Karaoke
     }
 
     /**
-     * Agrega una nueva canción a un artista del karaoke. <br>
+     * Agrega una nueva canciÃ³n a un artista del karaoke. <br>
      * <b> pre: </b> El arreglo de artistas ha sido inicializado y el artista existe. <br>
-     * <b> post: </b> Se ha agregado una nueva canción a un artista del karaoke.
-     * @param pArtista Nombre del artista intérprete de la canción. pArtista != null y pArtista != ""
-     * @param pNombre Nombre de la canción. pNombre != null y pNombre != ""
-     * @param pDuracion Duración en segundos de la canción. pDuracion > 0
-     * @param pLetra Letra de la canción. pLetra != null y pLetra != ""
-     * @param pDificultad Dificultad de la canción. pDificultad >= 1 y pDificultad <= 10
-     * @param pRuta Ruta del archivo con la canción. pRuta != null y pRuta != ""
-     * @return Verdadero si la canción fue agregada, falso de lo contrario.
+     * <b> post: </b> Se ha agregado una nueva canciÃ³n a un artista del karaoke.
+     * @param pArtista Nombre del artista intÃ³rprete de la canciÃ³n. pArtista != null y pArtista != ""
+     * @param pNombre Nombre de la canciÃ³n. pNombre != null y pNombre != ""
+     * @param pDuracion DuraciÃ³n en segundos de la canciÃ³n. pDuracion > 0
+     * @param pLetra Letra de la canciÃ³n. pLetra != null y pLetra != ""
+     * @param pDificultad Dificultad de la canciÃ³n. pDificultad >= 1 y pDificultad <= 10
+     * @param pRuta Ruta del archivo con la canciÃ³n. pRuta != null y pRuta != ""
+     * @return Verdadero si la canciÃ³n fue agregada, falso de lo contrario.
      */
     public boolean agregarCancion( String pArtista, String pNombre, int pDuracion, String pLetra, int pDificultad, String pRuta )
     {
-        // TODO Parte3 PuntoH: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoH: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         boolean agregado = false;
         if( buscarArtista( pArtista ) != null )
         {
@@ -408,15 +408,15 @@ public class Karaoke
     }
 
     /**
-     * Agrega una nueva lista de reproducción a la lista de listas de reproducción del karaoke. <br>
-     * <b> pre: </b> La lista que contiene las listas de reproducción ha sido inicializada. <br>
-     * No existe una lista de reproducción con el mismo nombre. <br>
-     * <b> post: </b> Se ha agregado una nueva lista de reproducción a la lista que contiene las listas de reproducción.
-     * @param pNombreListaReproduccion Nombre de la lista de reproducción. pNombreListaReproduccion != null y pNombreListaReproduccion != "".
+     * Agrega una nueva lista de reproducciÃ³n a la lista de listas de reproducciÃ³n del karaoke. <br>
+     * <b> pre: </b> La lista que contiene las listas de reproducciÃ³n ha sido inicializada. <br>
+     * No existe una lista de reproducciÃ³n con el mismo nombre. <br>
+     * <b> post: </b> Se ha agregado una nueva lista de reproducciÃ³n a la lista que contiene las listas de reproducciÃ³n.
+     * @param pNombreListaReproduccion Nombre de la lista de reproducciÃ³n. pNombreListaReproduccion != null y pNombreListaReproduccion != "".
      */
     public void agregarListaReproduccion( String pNombreListaReproduccion )
     {
-        // TODO Parte3 PuntoI: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoI: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         if( buscarListaReproduccion( pNombreListaReproduccion ) == -1 )
         {
             listasDeReproduccion.add( new ListaReproduccion( pNombreListaReproduccion ) );
@@ -424,19 +424,19 @@ public class Karaoke
     }
 
     /**
-     * Agregar una canción a una lista de reproducción.<br>
-     * <b>pre:</b> La lista que contiene las listas de reproducción está inicializada. <br>
-     * La lista de canciones está inicializada. <br>
-     * No existe una canción con el nombre dado. <br>
-     * Existe una lista de reproducción con el nombre dado. <br>
-     * <b> post: </b> La lista de reproducción tiene una canción adicional.
-     * @param pNombreCancion Nombre de la canción a agregar. pNombreCancion != null && pNombreCancion != null.
-     * @param pNombreListaReproduccion Nombre de la lista de reproducción. pNombreListaReproduccion != null && pNombreListaReproduccion != null.
+     * Agregar una canciÃ³n a una lista de reproducciÃ³n.<br>
+     * <b>pre:</b> La lista que contiene las listas de reproducciÃ³n estÃ³ inicializada. <br>
+     * La lista de canciones estÃ³ inicializada. <br>
+     * No existe una canciÃ³n con el nombre dado. <br>
+     * Existe una lista de reproducciÃ³n con el nombre dado. <br>
+     * <b> post: </b> La lista de reproducciÃ³n tiene una canciÃ³n adicional.
+     * @param pNombreCancion Nombre de la canciÃ³n a agregar. pNombreCancion != null && pNombreCancion != null.
+     * @param pNombreListaReproduccion Nombre de la lista de reproducciÃ³n. pNombreListaReproduccion != null && pNombreListaReproduccion != null.
      */
     public void agregarCancionAListaReproduccion( String pNombreCancion, String pNombreListaReproduccion )
     {
 
-        // TODO Parte3 PuntoJ: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoJ: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         ListaReproduccion lista = null;
         if( buscarListaReproduccion( pNombreListaReproduccion ) != -1 )
         {
@@ -447,34 +447,34 @@ public class Karaoke
     }
 
     /**
-     * Elimina una lista de reproducción de la lista de listas de reproducción del karaoke. <br>
-     * <b> pre: </b> La lista que contiene las listas de reproducción ha sido inicializada. <br>
+     * Elimina una lista de reproducciÃ³n de la lista de listas de reproducciÃ³n del karaoke. <br>
+     * <b> pre: </b> La lista que contiene las listas de reproducciÃ³n ha sido inicializada. <br>
      * Existe una lista de reproduccion con el nombre dado. <br>
-     * <b> post: </b> Se ha eliminado una lista de reproducción de la lista que contiene las listas de reproducción.
-     * @param pNombreListaReproduccion Nombre de la lista de reproducción. pNombreListaReproduccion != null y pNombreListaReproduccion != ""
+     * <b> post: </b> Se ha eliminado una lista de reproducciÃ³n de la lista que contiene las listas de reproducciÃ³n.
+     * @param pNombreListaReproduccion Nombre de la lista de reproducciÃ³n. pNombreListaReproduccion != null y pNombreListaReproduccion != ""
      */
     public void eliminarListaReproduccion( String pNombreListaReproduccion )
     {
-        // TODO Parte3 PuntoK: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoK: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         if( buscarListaReproduccion( pNombreListaReproduccion ) != -1 )
             listasDeReproduccion.remove( buscarListaReproduccion( pNombreListaReproduccion ) );
 
     }
 
     /**
-     * Elimina una canción de una lista de reproducción.<br>
-     * <b>pre:</b> La lista que contiene las listas de reproducción está inicializada. <br>
-     * La lista de canciones está inicializada. <br>
-     * Existe una canción con el nombre dado. <br>
-     * Existe una lista de reproducción con el nombre dado. <br>
-     * <b> post: </b> Se eliminó una canción de la lista de reproducción.
-     * @param pNombreCancion Nombre de la canción a eliminar. pNombreCancion != null && pNombreCancion != null.
-     * @param pNombreListaReproduccion Nombre de la lista de reproducción. pNombreListaReproduccion != null && pNombreListaReproduccion != null.
+     * Elimina una canciÃ³n de una lista de reproducciÃ³n.<br>
+     * <b>pre:</b> La lista que contiene las listas de reproducciÃ³n estÃ³ inicializada. <br>
+     * La lista de canciones estÃ³ inicializada. <br>
+     * Existe una canciÃ³n con el nombre dado. <br>
+     * Existe una lista de reproducciÃ³n con el nombre dado. <br>
+     * <b> post: </b> Se eliminÃ³ una canciÃ³n de la lista de reproducciÃ³n.
+     * @param pNombreCancion Nombre de la canciÃ³n a eliminar. pNombreCancion != null && pNombreCancion != null.
+     * @param pNombreListaReproduccion Nombre de la lista de reproducciÃ³n. pNombreListaReproduccion != null && pNombreListaReproduccion != null.
      */
     public void eliminarCancionDeListaReproduccion( String pNombreCancion, String pNombreListaReproduccion )
     {
 
-        // TODO Parte3 PuntoL: Complete el método según la documentación dada.
+        // TODO Parte3 PuntoL: Complete el mÃ³todo segÃ³n la documentaciÃ³n dada.
         ListaReproduccion lista = null;
         if( buscarListaReproduccion( pNombreListaReproduccion ) != -1 )
         {
@@ -485,11 +485,11 @@ public class Karaoke
     }
 
     // -----------------------------------------------------------------
-    // Puntos de Extensión
+    // Puntos de ExtensiÃ³n
     // -----------------------------------------------------------------
 
     /**
-     * Método para la extensión 1.
+     * MÃ³todo para la extensiÃ³n 1.
      * 
      * @return Respuesta 1
      */
@@ -499,7 +499,7 @@ public class Karaoke
     }
 
     /**
-     * Método para la extensión 2.
+     * MÃ³todo para la extensiÃ³n 2.
      * 
      * @return Respuesta 2
      */

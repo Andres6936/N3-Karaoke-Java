@@ -1,4 +1,4 @@
-package edu.jabs.karaoke.interfaz;
+package karaoke.interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 /**
- * Di·logo que permite agregar una nueva canciÛn al karaoke.
+ * Di√≥logo que permite agregar una nueva canci√≥n al karaoke.
  */
 public class DialogoAgregarCancion extends JDialog implements ActionListener
 {
@@ -46,7 +46,7 @@ public class DialogoAgregarCancion extends JDialog implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Ventana principal de la aplicaciÛn.
+     * Ventana principal de la aplicaci√≥n.
      */
     private InterfazKaraoke principal;
 
@@ -55,47 +55,47 @@ public class DialogoAgregarCancion extends JDialog implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Campo de texto con la categorÌa de la canciÛn.
+     * Campo de texto con la categor√≥a de la canci√≥n.
      */
     private JTextField txtCategoria;
 
     /**
-     * Campo de texto con el artista de la canciÛn.
+     * Campo de texto con el artista de la canci√≥n.
      */
     private JTextField txtArtistas;
 
     /**
-     * Campo de texto con el nombre de la canciÛn.
+     * Campo de texto con el nombre de la canci√≥n.
      */
     private JTextField txtNombre;
 
     /**
-     * Campo de texto con la duraciÛn de la canciÛn.
+     * Campo de texto con la duraci√≥n de la canci√≥n.
      */
     private JTextField txtDuracion;
 
     /**
-     * Campo de texto con la dificultad de la canciÛn.
+     * Campo de texto con la dificultad de la canci√≥n.
      */
     private JTextField txtDificultad;
 
     /**
-     * ¡rea de texto con la letra de la canciÛn.
+     * √≥rea de texto con la letra de la canci√≥n.
      */
     private JTextArea txtLetra;
 
     /**
-     * Campo de texto con la ruta del archivo con la canciÛn.
+     * Campo de texto con la ruta del archivo con la canci√≥n.
      */
     private JTextField txtRuta;
 
     /**
-     * BotÛn para agregar una nueva canciÛn.
+     * Bot√≥n para agregar una nueva canci√≥n.
      */
     private JButton btnAgregar;
 
     /**
-     * BotÛn para seleccionar la ruta del archivo de la canciÛn.
+     * Bot√≥n para seleccionar la ruta del archivo de la canci√≥n.
      */
     private JButton btnSeleccionar;
 
@@ -104,7 +104,7 @@ public class DialogoAgregarCancion extends JDialog implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Constructor del di·logo.
+     * Constructor del di√≥logo.
      * @param pVentana Ventana principal.
      */
     public DialogoAgregarCancion( InterfazKaraoke pVentana )
@@ -115,12 +115,12 @@ public class DialogoAgregarCancion extends JDialog implements ActionListener
         setSize( 335, 400 );
         setModal( true );
         setLocationRelativeTo( null );
-        setTitle( "Agregar canciÛn" );
+        setTitle( "Agregar canci√≥n" );
 
         JPanel panelInfo1 = new JPanel( );
         panelInfo1.setLayout( new GridLayout( 6, 2 ) );
 
-        panelInfo1.add( new JLabel( " CategorÌa: " ) );
+        panelInfo1.add( new JLabel( " Categor√≥a: " ) );
         txtCategoria = new JTextField( principal.darCategoriaSeleccionada( ) );
         txtCategoria.setEnabled( false );
         panelInfo1.add( txtCategoria );
@@ -134,7 +134,7 @@ public class DialogoAgregarCancion extends JDialog implements ActionListener
         txtNombre = new JTextField( );
         panelInfo1.add( txtNombre );
 
-        panelInfo1.add( new JLabel( " DuraciÛn (seg): " ) );
+        panelInfo1.add( new JLabel( " Duraci√≥n (seg): " ) );
         txtDuracion = new JTextField( );
         panelInfo1.add( txtDuracion );
 
@@ -182,12 +182,12 @@ public class DialogoAgregarCancion extends JDialog implements ActionListener
     }
 
     // -----------------------------------------------------------------
-    // MÈtodos
+    // M√≥todos
     // -----------------------------------------------------------------
 
     /**
      * Manejo de los eventos de los botones.
-     * @param pEvento AcciÛn que generÛ el evento.
+     * @param pEvento Acci√≥n que gener√≥ el evento.
      */
     public void actionPerformed( ActionEvent pEvento )
     {
@@ -217,22 +217,22 @@ public class DialogoAgregarCancion extends JDialog implements ActionListener
                         }
                         else
                         {
-                            JOptionPane.showMessageDialog( this, "La dificultad debe estar entre 1 y 10.", "Agregar canciÛn", JOptionPane.ERROR_MESSAGE );
+                            JOptionPane.showMessageDialog( this, "La dificultad debe estar entre 1 y 10.", "Agregar canci√≥n", JOptionPane.ERROR_MESSAGE );
                         }
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog( this, "La duraciÛn debe ser mayor a cero.", "Agregar canciÛn", JOptionPane.ERROR_MESSAGE );
+                        JOptionPane.showMessageDialog( this, "La duraci√≥n debe ser mayor a cero.", "Agregar canci√≥n", JOptionPane.ERROR_MESSAGE );
                     }
                 }
                 catch( NumberFormatException ex )
                 {
-                    JOptionPane.showMessageDialog( this, "La duraciÛn y la dificultad de la canciÛn deben ser valores numÈricos.", "Agregar canciÛn", JOptionPane.ERROR_MESSAGE );
+                    JOptionPane.showMessageDialog( this, "La duraci√≥n y la dificultad de la canci√≥n deben ser valores num√≥ricos.", "Agregar canci√≥n", JOptionPane.ERROR_MESSAGE );
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog( this, "Por favor ingrese la informaciÛn completa de la canciÛn.", "Agregar canciÛn", JOptionPane.ERROR_MESSAGE );
+                JOptionPane.showMessageDialog( this, "Por favor ingrese la informaci√≥n completa de la canci√≥n.", "Agregar canci√≥n", JOptionPane.ERROR_MESSAGE );
             }
         }
         else if( comando.equals( SELECCIONAR ) )

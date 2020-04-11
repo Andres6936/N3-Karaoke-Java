@@ -1,4 +1,4 @@
-package edu.jabs.karaoke.interfaz;
+package karaoke.interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.InputStream;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,12 +20,12 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import edu.jabs.karaoke.mundo.Cancion;
+import karaoke.mundo.Cancion;
 import javazoom.jlgui.basicplayer.BasicPlayer;
 import javazoom.jlgui.basicplayer.BasicPlayerException;
 
 /**
- * Panel con la información de una canción.
+ * Panel con la informaciÃ³n de una canciÃ³n.
  */
 public class PanelCancion extends JPanel implements ActionListener
 {
@@ -57,12 +58,12 @@ public class PanelCancion extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Ruta del archivo con la canción.
+     * Ruta del archivo con la canciÃ³n.
      */
     private String ruta;
 
     /**
-     * Player de la canción.
+     * Player de la canciÃ³n.
      */
     private BasicPlayer player;
 
@@ -71,37 +72,37 @@ public class PanelCancion extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Campo de texto con el nombre de la canción.
+     * Campo de texto con el nombre de la canciÃ³n.
      */
     private JTextField txtNombre;
 
     /**
-     * Campo de texto con la duración de la canción.
+     * Campo de texto con la duraciÃ³n de la canciÃ³n.
      */
     private JTextField txtDuracion;
 
     /**
-     * Campo de texto con la dificultad de la canción.
+     * Campo de texto con la dificultad de la canciÃ³n.
      */
     private JTextField txtDificultad;
 
     /**
-     * Área de texto con la letra de la canción.
+     * Ã³rea de texto con la letra de la canciÃ³n.
      */
     private JTextArea txtLetra;
 
     /**
-     * Botón para reproducir una canción.
+     * BotÃ³n para reproducir una canciÃ³n.
      */
     private JButton btnReproducir;
 
     /**
-     * Botón para pausar una canción.
+     * BotÃ³n para pausar una canciÃ³n.
      */
     private JButton btnPausar;
 
     /**
-     * Botón para parar una canción.
+     * BotÃ³n para parar una canciÃ³n.
      */
     private JButton btnParar;
 
@@ -110,13 +111,13 @@ public class PanelCancion extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Crea el panel con la información de una canción.
+     * Crea el panel con la informaciÃ³n de una canciÃ³n.
      */
     public PanelCancion( )
     {
         ruta = null;
 
-        setBorder( new CompoundBorder( new TitledBorder( " Canción: " ), new EmptyBorder( 0, 0, 0, 5 ) ) );
+        setBorder( new CompoundBorder( new TitledBorder( " CanciÃ³n: " ), new EmptyBorder( 0, 0, 0, 5 ) ) );
         setPreferredSize( new Dimension( 250, 0 ) );
         setLayout( new BorderLayout( ) );
 
@@ -134,7 +135,7 @@ public class PanelCancion extends JPanel implements ActionListener
         txtNombre.setEditable( false );
         info2.add( txtNombre );
 
-        info1.add( new JLabel( " Duración: " ) );
+        info1.add( new JLabel( " DuraciÃ³n: " ) );
         txtDuracion = new JTextField( );
         txtDuracion.setEditable( false );
         info2.add( txtDuracion );
@@ -168,17 +169,17 @@ public class PanelCancion extends JPanel implements ActionListener
         botones.setBorder( new EmptyBorder( 2, 60, 0, 60 ) );
         botones.setPreferredSize( new Dimension( 0, 35 ) );
 
-        btnReproducir = new JButton( new ImageIcon( "./data/imagenes/reproducir.gif" ) );
+        btnReproducir = new JButton( load( "imagenes/reproducir.gif" ) );
         btnReproducir.setActionCommand( REPRODUCIR );
         btnReproducir.addActionListener( this );
         botones.add( btnReproducir );
 
-        btnPausar = new JButton( new ImageIcon( "./data/imagenes/pausar.gif" ) );
+        btnPausar = new JButton( load( "imagenes/pausar.gif" ) );
         btnPausar.setActionCommand( PAUSAR );
         btnPausar.addActionListener( this );
         botones.add( btnPausar );
 
-        btnParar = new JButton( new ImageIcon( "./data/imagenes/parar.gif" ) );
+        btnParar = new JButton( load( "imagenes/parar.gif" ) );
         btnParar.setActionCommand( PARAR );
         btnParar.addActionListener( this );
         botones.add( btnParar );
@@ -189,12 +190,19 @@ public class PanelCancion extends JPanel implements ActionListener
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // MÃ³todos
     // -----------------------------------------------------------------
 
+    private ImageIcon load( final String path )
+    {
+        InputStream file = getClass( ).getClassLoader( ).getResourceAsStream( path );
+        ImageIcon icon = new ImageIcon( String.valueOf( file ) );
+        return icon;
+    }
+
     /**
-     * Actualiza la información de la canción.
-     * @param pCancion Canción cuya información va a ser mostrada. pCancion != null.
+     * Actualiza la informaciÃ³n de la canciÃ³n.
+     * @param pCancion CanciÃ³n cuya informaciÃ³n va a ser mostrada. pCancion != null.
      */
     public void actualizar( Cancion pCancion )
     {
@@ -224,7 +232,7 @@ public class PanelCancion extends JPanel implements ActionListener
             }
             catch( BasicPlayerException pExcepcion )
             {
-                JOptionPane.showMessageDialog( this, "No fue posible parar la canción " + pExcepcion.getMessage( ), "Parar canción", JOptionPane.ERROR_MESSAGE );
+                JOptionPane.showMessageDialog( this, "No fue posible parar la canciÃ³n " + pExcepcion.getMessage( ), "Parar canciÃ³n", JOptionPane.ERROR_MESSAGE );
             }
 
         }
@@ -232,7 +240,7 @@ public class PanelCancion extends JPanel implements ActionListener
 
     /**
      * Manejo de los eventos de los botones.
-     * @param pEvento Acción que generó el evento. pEvento != null.
+     * @param pEvento AcciÃ³n que generÃ³ el evento. pEvento != null.
      */
     public void actionPerformed( ActionEvent pEvento )
     {
@@ -256,7 +264,7 @@ public class PanelCancion extends JPanel implements ActionListener
                 }
                 catch( Exception pExcepcion )
                 {
-                    JOptionPane.showMessageDialog( this, "No fue posible reproducir la canción " + pExcepcion.getMessage( ), "Reproducir canción", JOptionPane.ERROR_MESSAGE );
+                    JOptionPane.showMessageDialog( this, "No fue posible reproducir la canciÃ³n " + pExcepcion.getMessage( ), "Reproducir canciÃ³n", JOptionPane.ERROR_MESSAGE );
                 }
             }
         }
@@ -268,7 +276,7 @@ public class PanelCancion extends JPanel implements ActionListener
             }
             catch( BasicPlayerException pExcepcion )
             {
-                JOptionPane.showMessageDialog( this, "No fue posible parar la canción " + pExcepcion.getMessage( ), "Parar canción", JOptionPane.ERROR_MESSAGE );
+                JOptionPane.showMessageDialog( this, "No fue posible parar la canciÃ³n " + pExcepcion.getMessage( ), "Parar canciÃ³n", JOptionPane.ERROR_MESSAGE );
             }
         }
         else if( comando.equals( PAUSAR ) )
@@ -279,7 +287,7 @@ public class PanelCancion extends JPanel implements ActionListener
             }
             catch( BasicPlayerException pExcepcion )
             {
-                JOptionPane.showMessageDialog( this, "No fue posible pausar la canción " + pExcepcion.getMessage( ), "Pausar canción", JOptionPane.ERROR_MESSAGE );
+                JOptionPane.showMessageDialog( this, "No fue posible pausar la canciÃ³n " + pExcepcion.getMessage( ), "Pausar canciÃ³n", JOptionPane.ERROR_MESSAGE );
             }
         }
     }

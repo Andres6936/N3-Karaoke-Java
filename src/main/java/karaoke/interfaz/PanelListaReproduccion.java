@@ -1,4 +1,4 @@
-package edu.jabs.karaoke.interfaz;
+package karaoke.interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -16,10 +16,10 @@ import javax.swing.ListSelectionModel;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
-import edu.jabs.karaoke.mundo.ListaReproduccion;
+import karaoke.mundo.ListaReproduccion;
 
 /**
- * Panel con la informaciÛn de las listas de reproducciÛn.
+ * Panel con la informaci√≥n de las listas de reproducci√≥n.
  *
  */
 public class PanelListaReproduccion extends JPanel implements ActionListener
@@ -59,7 +59,7 @@ public class PanelListaReproduccion extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Ventana principal de la aplicaciÛn.
+     * Ventana principal de la aplicaci√≥n.
      */
     private InterfazKaraoke principal;
 
@@ -68,27 +68,27 @@ public class PanelListaReproduccion extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Tabla para mostrar la informaciÛn de las listas de reproducciÛn.
+     * Tabla para mostrar la informaci√≥n de las listas de reproducci√≥n.
      */
     private JTable tablaListasReproduccion;
 
     /**
-     * Modelo para visualizar la informaciÛn en la tabla de las listas de reproducciÛn.
+     * Modelo para visualizar la informaci√≥n en la tabla de las listas de reproducci√≥n.
      */
     private DefaultTableModel model;
 
     /**
-     * BotÛn para agregar una lista de reproducciÛn.
+     * Bot√≥n para agregar una lista de reproducci√≥n.
      */
     private JButton btnAgregar;
 
     /**
-     * BotÛn para eliminar una lista de reproducciÛn.
+     * Bot√≥n para eliminar una lista de reproducci√≥n.
      */
     private JButton btnEliminar;
 
     /**
-     * BotÛn para modificar las canciones de una lista de reproducciÛn.
+     * Bot√≥n para modificar las canciones de una lista de reproducci√≥n.
      */
     private JButton btnModificarCanciones;
 
@@ -97,14 +97,14 @@ public class PanelListaReproduccion extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Crea el panel para la visualizaciÛn de las listas de reproducciÛn.
-     * @param pPrincipal Ventana principal de la aplicaciÛn. pPrincipal != null.
+     * Crea el panel para la visualizaci√≥n de las listas de reproducci√≥n.
+     * @param pPrincipal Ventana principal de la aplicaci√≥n. pPrincipal != null.
      */
     public PanelListaReproduccion( InterfazKaraoke pPrincipal )
     {
         principal = pPrincipal;
 
-        TitledBorder borde = new TitledBorder( "Listas de reproducciÛn" );
+        TitledBorder borde = new TitledBorder( "Listas de reproducci√≥n" );
         setBorder( borde );
         setLayout( new BorderLayout( ) );
 
@@ -130,7 +130,7 @@ public class PanelListaReproduccion extends JPanel implements ActionListener
 
         JPanel panelOpcionesListaReproduccion = new JPanel( );
         panelOpcionesListaReproduccion.setLayout( new GridLayout( 3, 1 ) );
-        panelOpcionesListaReproduccion.setBorder( new TitledBorder( "Opciones lista de reproducciÛn" ) );
+        panelOpcionesListaReproduccion.setBorder( new TitledBorder( "Opciones lista de reproducci√≥n" ) );
 
         btnAgregar = new JButton( "Agregar nueva lista" );
         btnAgregar.setActionCommand( AGREGAR );
@@ -154,12 +154,12 @@ public class PanelListaReproduccion extends JPanel implements ActionListener
     }
 
     // -----------------------------------------------------------------
-    // MÈtodos
+    // M√≥todos
     // -----------------------------------------------------------------
 
     /**
-     * Retorna el nombre de la lista de reproducciÛn seleccionada en la tabla.
-     * @return Nombre de la lista de reproducciÛn seleccionada en la tabla.
+     * Retorna el nombre de la lista de reproducci√≥n seleccionada en la tabla.
+     * @return Nombre de la lista de reproducci√≥n seleccionada en la tabla.
      */
     public String darNombreListaReproduccionSeleccionada( )
     {
@@ -182,8 +182,8 @@ public class PanelListaReproduccion extends JPanel implements ActionListener
     }
 
     /**
-     * Actualiza la informaciÛn de la tabla para mostrar las listas de reproducciÛn que recibe por par·metro.
-     * @param pListasReproduccion Lista de listas de reproducciÛn que se deben mostrar en la tabla. pListasReproduccion != null.
+     * Actualiza la informaci√≥n de la tabla para mostrar las listas de reproducci√≥n que recibe por par√≥metro.
+     * @param pListasReproduccion Lista de listas de reproducci√≥n que se deben mostrar en la tabla. pListasReproduccion != null.
      */
 	public void actualizarListaReproduccion( ArrayList< ListaReproduccion > pListasReproduccion )
     {
@@ -203,7 +203,7 @@ public class PanelListaReproduccion extends JPanel implements ActionListener
 
     /**
      * Manejo de los eventos de los botones.
-     * @param pEvento Evento que se realizÛ. pEvento != null.
+     * @param pEvento Evento que se realiz√≥. pEvento != null.
      */
     public void actionPerformed( ActionEvent pEvento )
     {

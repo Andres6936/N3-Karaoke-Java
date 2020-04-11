@@ -1,4 +1,4 @@
-package edu.jabs.karaoke.interfaz;
+package karaoke.interfaz;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -15,10 +15,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import edu.jabs.karaoke.mundo.Cancion;
+import karaoke.mundo.Cancion;
 
 /**
- * Di·logo para agregar canciones a una lista de reproducciÛn.
+ * Di√≥logo para agregar canciones a una lista de reproducci√≥n.
  *
  */
 public class DialogoCancionesListaReproduccion extends JDialog implements ActionListener
@@ -34,17 +34,17 @@ public class DialogoCancionesListaReproduccion extends JDialog implements Action
 	private static final long serialVersionUID = 106L;
 
 	/**
-	 * Representa el comando agregar una canciÛn.
+     * Representa el comando agregar una canci√≥n.
 	 */
     private static final String AGREGAR = "Agregar";
 
     /**
-     * Representa el comando eliminar una canciÛn.
+     * Representa el comando eliminar una canci√≥n.
      */
     private static final String ELIMINAR = "Eliminar";
 
     /**
-     * Representa el comando para cerrar el di·logo.
+     * Representa el comando para cerrar el di√≥logo.
      */
     private static final String SALIR = "Salir";
 
@@ -53,17 +53,17 @@ public class DialogoCancionesListaReproduccion extends JDialog implements Action
     // -----------------------------------------------------------------
 
     /**
-     * Ventana principal de la aplicaciÛn.
+     * Ventana principal de la aplicaci√≥n.
      */
     private InterfazKaraoke principal;
 
     /**
-     * Nombre de la lista de reproducciÛn.
+     * Nombre de la lista de reproducci√≥n.
      */
     private String nombre;
 
     /**
-     * Canciones incluidas en la lista de reproducciÛn.
+     * Canciones incluidas en la lista de reproducci√≥n.
      */
 	private Vector< String > cancionesIncluidas;
 
@@ -77,17 +77,17 @@ public class DialogoCancionesListaReproduccion extends JDialog implements Action
 	private JList< String > listaCanciones;
 
     /**
-     * BotÛn para agregar una canciÛn a la lista.
+     * Bot√≥n para agregar una canci√≥n a la lista.
      */
     private JButton btnAgregar;
 
     /**
-     * BotÛn para eliminar una canciÛn de la lista.
+     * Bot√≥n para eliminar una canci√≥n de la lista.
      */
     private JButton btnEliminar;
 
     /**
-     * BotÛn para cerrar el di·logo.
+     * Bot√≥n para cerrar el di√≥logo.
      */
     private JButton btnSalir;
 
@@ -96,9 +96,9 @@ public class DialogoCancionesListaReproduccion extends JDialog implements Action
     // -----------------------------------------------------------------
 
     /**
-     * Crea el di·logo para la visualizaciÛn de las canciones aÒadidas a una lista de reproducciÛn.
-     * @param pPrincipal Ventana principal de la aplicaciÛn. pPrincipal != null.
-     * @param pNombre Nombre de la lista de reproducciÛn. pNombre != null && pNombre != "".
+     * Crea el di√≥logo para la visualizaci√≥n de las canciones a√≥adidas a una lista de reproducci√≥n.
+     * @param pPrincipal Ventana principal de la aplicaci√≥n. pPrincipal != null.
+     * @param pNombre Nombre de la lista de reproducci√≥n. pNombre != null && pNombre != "".
      */
     public DialogoCancionesListaReproduccion( InterfazKaraoke pPrincipal, String pNombre )
     {
@@ -147,12 +147,12 @@ public class DialogoCancionesListaReproduccion extends JDialog implements Action
     }
 
     // -----------------------------------------------------------------
-    // MÈtodos
+    // M√≥todos
     // -----------------------------------------------------------------
 
     /**
      * Manejo de los eventos de los botones.
-     * @param pEvento AcciÛn que generÛ el evento. pEvento != null.
+     * @param pEvento Acci√≥n que gener√≥ el evento. pEvento != null.
      */
     public void actionPerformed( ActionEvent pEvento )
     {
@@ -194,10 +194,10 @@ public class DialogoCancionesListaReproduccion extends JDialog implements Action
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog( this, "Debe seleccionar una canciÛn de la lista.", "Eliminar canciÛn", JOptionPane.ERROR_MESSAGE );
+                    JOptionPane.showMessageDialog( this, "Debe seleccionar una canci√≥n de la lista.", "Eliminar canci√≥n", JOptionPane.ERROR_MESSAGE );
                 } 
             }else{
-                JOptionPane.showMessageDialog( this, "La lista de reproducciÛn debe tener al menos una canciÛn.", "Eliminar canciÛn", JOptionPane.ERROR_MESSAGE );
+                JOptionPane.showMessageDialog( this, "La lista de reproducci√≥n debe tener al menos una canci√≥n.", "Eliminar canci√≥n", JOptionPane.ERROR_MESSAGE );
             }
             
         }
