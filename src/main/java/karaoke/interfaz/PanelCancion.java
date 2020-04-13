@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.InputStream;
 
 /**
  * Panel con la información de una canción.
@@ -217,8 +218,9 @@ public class PanelCancion extends JPanel implements ActionListener
                     {
                         if ( player.getStatus( ) != 1 )
                         {
-                            File file = new File( ruta );
-                            player.open( file );
+                            InputStream in = getClass( ).getClassLoader( ).getResourceAsStream( ruta );
+                            assert in != null;
+                            player.open( in );
                             player.play( );
                         }
                         else
