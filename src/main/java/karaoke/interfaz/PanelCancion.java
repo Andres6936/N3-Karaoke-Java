@@ -30,17 +30,17 @@ public class PanelCancion extends JPanel implements ActionListener
 	/**
 	 * Representa el comando reproducir.
 	 */
-    public final static String REPRODUCIR = "Reproducir";
+    private final static String REPRODUCIR = "Reproducir";
 
     /**
      * Representa el comando pausar.
      */
-    public final static String PAUSAR = "Pausar";
+    private final static String PAUSAR = "Pausar";
 
     /**
      * Representar el comando parar.
      */
-    public final static String PARAR = "Parar";
+    private final static String PARAR = "Parar";
 
     // -----------------------------------------------------------------
     // Atributos
@@ -80,21 +80,6 @@ public class PanelCancion extends JPanel implements ActionListener
      */
     private JTextArea txtLetra;
 
-    /**
-     * Botón para reproducir una canción.
-     */
-    private JButton btnReproducir;
-
-    /**
-     * Botón para pausar una canción.
-     */
-    private JButton btnPausar;
-
-    /**
-     * Botón para parar una canción.
-     */
-    private JButton btnParar;
-
     // -----------------------------------------------------------------
     // Constructores
     // -----------------------------------------------------------------
@@ -102,7 +87,7 @@ public class PanelCancion extends JPanel implements ActionListener
     /**
      * Crea el panel con la información de una canción.
      */
-    public PanelCancion( )
+    PanelCancion( )
     {
         ruta = null;
 
@@ -158,17 +143,20 @@ public class PanelCancion extends JPanel implements ActionListener
         botones.setBorder( new EmptyBorder( 2, 60, 0, 60 ) );
         botones.setPreferredSize( new Dimension( 0, 35 ) );
 
-        btnReproducir = new JButton( load( "imagenes/reproducir.gif" ) );
+        // Botón para reproducir una canción.
+        JButton btnReproducir = new JButton( load( "imagenes/reproducir.gif" ) );
         btnReproducir.setActionCommand( REPRODUCIR );
         btnReproducir.addActionListener( this );
         botones.add( btnReproducir );
 
-        btnPausar = new JButton( load( "imagenes/pausar.gif" ) );
+        // Botón para pausar una canción.
+        JButton btnPausar = new JButton( load( "imagenes/pausar.gif" ) );
         btnPausar.setActionCommand( PAUSAR );
         btnPausar.addActionListener( this );
         botones.add( btnPausar );
 
-        btnParar = new JButton( load( "imagenes/parar.gif" ) );
+        // Botón para parar una canción.
+        JButton btnParar = new JButton( load( "imagenes/parar.gif" ) );
         btnParar.setActionCommand( PARAR );
         btnParar.addActionListener( this );
         botones.add( btnParar );
@@ -185,15 +173,14 @@ public class PanelCancion extends JPanel implements ActionListener
     private ImageIcon load( final String path )
     {
         InputStream file = getClass( ).getClassLoader( ).getResourceAsStream( path );
-        ImageIcon icon = new ImageIcon( String.valueOf( file ) );
-        return icon;
+        return new ImageIcon( String.valueOf( file ) );
     }
 
     /**
      * Actualiza la información de la canción.
      * @param pCancion Canción cuya información va a ser mostrada. pCancion != null.
      */
-    public void actualizar( Cancion pCancion )
+    void actualizar( Cancion pCancion )
     {
         if( pCancion != null )
         {
@@ -226,36 +213,36 @@ public class PanelCancion extends JPanel implements ActionListener
     public void actionPerformed( ActionEvent pEvento )
     {
         String comando = pEvento.getActionCommand( );
-        if( comando.equals( REPRODUCIR ) )
+        switch ( comando )
         {
-            if( ruta != null )
-            {
-                try
+            case REPRODUCIR:
+                if ( ruta != null )
                 {
-                    if( player.getStatus( ) != 1 )
+                    try
                     {
-                        File file = new File( ruta );
-                        player.open( file );
-                        player.play( );
+                        if ( player.getStatus( ) != 1 )
+                        {
+                            File file = new File( ruta );
+                            player.open( file );
+                            player.play( );
+                        }
+                        else
+                        {
+                            player.resume( );
+                        }
                     }
-                    else
+                    catch ( Exception pExcepcion )
                     {
-                        player.resume( );
+                        JOptionPane.showMessageDialog( this, "No fue posible reproducir la canción " + pExcepcion.getMessage( ), "Reproducir canción", JOptionPane.ERROR_MESSAGE );
                     }
                 }
-                catch( Exception pExcepcion )
-                {
-                    JOptionPane.showMessageDialog( this, "No fue posible reproducir la canción " + pExcepcion.getMessage( ), "Reproducir canción", JOptionPane.ERROR_MESSAGE );
-                }
-            }
-        }
-        else if( comando.equals( PARAR ) )
-        {
-            player.stop( );
-        }
-        else if( comando.equals( PAUSAR ) )
-        {
-            player.pause( );
+                break;
+            case PARAR:
+                player.stop( );
+                break;
+            case PAUSAR:
+                player.pause( );
+                break;
         }
     }
 }
