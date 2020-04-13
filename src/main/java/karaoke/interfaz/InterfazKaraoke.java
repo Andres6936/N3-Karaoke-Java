@@ -1,21 +1,15 @@
 package karaoke.interfaz;
 
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Properties;
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-
 import karaoke.mundo.Artista;
 import karaoke.mundo.Cancion;
 import karaoke.mundo.Karaoke;
 import karaoke.mundo.ListaReproduccion;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Properties;
 
 /**
  * Ventana principal de la aplicación.
@@ -50,19 +44,9 @@ public class InterfazKaraoke extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Panel con la imagen del encabezado.
-     */
-    private PanelImagen panelImagen;
-
-    /**
      * Panel con la información de una canción.
      */
     private PanelCancion panelCancion;
-
-    /**
-     * Panel con las opciones de bósqueda y extensión.
-     */
-    private PanelOpciones panelOpciones;
 
     /**
      * Panel con la información de las listas de reproducción.
@@ -82,7 +66,7 @@ public class InterfazKaraoke extends JFrame
      * Construye la ventana de la aplicación. <br>
      * <b>post: </b> Se inicializaron los póneles con la información del sistema.
      */
-    public InterfazKaraoke( )
+    private InterfazKaraoke( )
     {
         // Crea la clase principal
         karaoke = new Karaoke( );
@@ -95,10 +79,13 @@ public class InterfazKaraoke extends JFrame
         setTitle( " CupiKaraoke " );
 
         // Creación de los póneles
-        panelImagen = new PanelImagen( );
+
+        // Panel con la imagen del encabezado.
+        PanelImagen panelImagen = new PanelImagen( );
         add( panelImagen, BorderLayout.NORTH );
 
-        panelOpciones = new PanelOpciones( this );
+        // Panel con las opciones de bósqueda y extensión.
+        PanelOpciones panelOpciones = new PanelOpciones( this );
         panelCancion = new PanelCancion( );
         panelListaReproduccion = new PanelListaReproduccion( this );
         panelArtista = new PanelArtista( this );
@@ -131,7 +118,7 @@ public class InterfazKaraoke extends JFrame
      * @param pNombre Nombre del artista. pNombre != null y pNombre != "".
      * @return Lista de canciones del artista dado.
      */
-	public ArrayList< Cancion > darCancionesArtista( String pNombre )
+    ArrayList< Cancion > darCancionesArtista( String pNombre )
     {
         return karaoke.darCancionesArtista( pNombre );
     }
@@ -150,7 +137,7 @@ public class InterfazKaraoke extends JFrame
      * Retorna todas las canciones del karaoke.
      * @return Lista de canciones.
      */
-	public ArrayList< Cancion > darCancionesKaraoke( )
+    ArrayList< Cancion > darCancionesKaraoke( )
     {
         return karaoke.darCancionesKaraoke( );
     }
@@ -159,7 +146,7 @@ public class InterfazKaraoke extends JFrame
      * Retorna el artista seleccionado en el panel de artista.
      * @return Artista seleccionado.
      */
-    public String darArtistaSeleccionado( )
+    String darArtistaSeleccionado( )
     {
         return panelArtista.darArtistaSeleccionado( );
     }
@@ -168,7 +155,7 @@ public class InterfazKaraoke extends JFrame
      * Retorna la categoróa seleccionada en el panel de artista.
      * @return Categoróa seleccionada.
      */
-    public String darCategoriaSeleccionada( )
+    String darCategoriaSeleccionada( )
     {
         return panelArtista.darCategoriaSeleccionada( );
     }
@@ -178,7 +165,7 @@ public class InterfazKaraoke extends JFrame
      * @param pNombre Nombre de la lista de reproducción. pNombre != null y pNombre != "".
      * @return Lista de canciones de la lista de reproducción con el nombre dado.
      */
-	public ArrayList< Cancion > darCancionesIncluidasListaReproduccion( String pNombre )
+    ArrayList< Cancion > darCancionesIncluidasListaReproduccion( String pNombre )
     {
         int indiceLista= karaoke.buscarListaReproduccion( pNombre );
         return ((ListaReproduccion)karaoke.darListasDeReproduccion( ).get( indiceLista  )).darCanciones( );
@@ -198,7 +185,7 @@ public class InterfazKaraoke extends JFrame
      * Retorna la lista de listas de reproducción del karaoke.
      * @return Lista de listas de reproducción.
      */
-	public ArrayList< ListaReproduccion > darListasReproduccionKaraoke( )
+    private ArrayList< ListaReproduccion > darListasReproduccionKaraoke( )
     {
         return karaoke.darListasDeReproduccion( );
     }
@@ -249,7 +236,7 @@ public class InterfazKaraoke extends JFrame
      * @param pDificultad Dificultad de la canción. pDificultad >= 1 y pDificultad <= 10.
      * @param pRuta Ruta del archivo con la canción. pRuta != null y pRuta != "".
      */
-    public void agregarCancion( String pArtista, String pNombre, int pDuracion, String pLetra, int pDificultad, String pRuta )
+    void agregarCancion( String pArtista, String pNombre, int pDuracion, String pLetra, int pDificultad, String pRuta )
     {
         boolean agregada = karaoke.agregarCancion( pArtista, pNombre, pDuracion, pLetra, pDificultad, pRuta );
         if( agregada )
@@ -270,7 +257,7 @@ public class InterfazKaraoke extends JFrame
      * @param pNombre Nombre de la lista de reproducción. pNombre != null y pNombre != "".
      * @param pCancionInicial Nombre de la primera canción de la lista de reproducción. pCancionInicial != null y pCancionInicial != "".
      */
-    public void agregarListaReproduccion( String pNombre, String pCancionInicial )
+    void agregarListaReproduccion( String pNombre, String pCancionInicial )
     {
         if( karaoke.buscarListaReproduccion( pNombre ) == -1 )
         {
@@ -291,7 +278,7 @@ public class InterfazKaraoke extends JFrame
      * @param pNombreCancion Nombre de la canción. pNombreCancion != null && pNombreCancion != null.
      * @param pNombreListaReproduccion Nombre de la lista de reproducción. pNombreListaReproduccion != null && pNombreListaReproduccion != null.
      */
-    public void agregarCancionListaReproduccion( String pNombreCancion, String pNombreListaReproduccion )
+    void agregarCancionListaReproduccion( String pNombreCancion, String pNombreListaReproduccion )
     {
         int indiceLista = karaoke.buscarListaReproduccion( pNombreListaReproduccion );
         ListaReproduccion listaReproduccionBuscada = (ListaReproduccion) karaoke.darListasDeReproduccion( ).get( indiceLista );
@@ -316,7 +303,7 @@ public class InterfazKaraoke extends JFrame
      * Actualiza la interfaz con la lista de artistas de una categoróa.
      * @param pCategoria Categoróa seleccionada del karaoke. pCategoria != null.
      */
-    public void actualizarArtistas( String pCategoria )
+    void actualizarArtistas( String pCategoria )
     {
 		ArrayList< Artista > artistas = karaoke.darArtistasCategoria( pCategoria );
         panelArtista.actualizarArtistas( artistas );
@@ -326,7 +313,7 @@ public class InterfazKaraoke extends JFrame
      * Actualiza la interfaz con la información de una canción.
      * @param pCancion Canción que se debe mostrar. pCancion != null.
      */
-    public void actualizarCancion( Cancion pCancion )
+    void actualizarCancion( Cancion pCancion )
     {
         panelCancion.actualizar( pCancion );
     }
@@ -334,10 +321,10 @@ public class InterfazKaraoke extends JFrame
     /**
      * Muestra el diólogo para modificar canciones de la lista de reproducción seleccionada.
      */
-    public void modificarCancionesListaReproduccion( )
+    void modificarCancionesListaReproduccion( )
     {
         String seleccionada = panelListaReproduccion.darNombreListaReproduccionSeleccionada( );
-        if( seleccionada != "" )
+        if ( ! seleccionada.equals( "" ) )
         {
             mostrarDialogoCancionesListaReproduccion( seleccionada );
         }
@@ -352,7 +339,7 @@ public class InterfazKaraoke extends JFrame
      * @param pNombreCancion Nombre de la canción. pNombreCancion != null && pNombreAtpNombreCancionraccion != null.
      * @param pNombreListaReproduccion Nombre de la lista de reproducción. pNombreListaReproduccion != null && pNombreListaReproduccion != null.
      */
-    public void eliminarCancionDeListaReproduccion( String pNombreCancion, String pNombreListaReproduccion )
+    void eliminarCancionDeListaReproduccion( String pNombreCancion, String pNombreListaReproduccion )
     {
         int indiceLista= karaoke.buscarListaReproduccion( pNombreListaReproduccion );
         ListaReproduccion listaReproduccion= (ListaReproduccion)karaoke.darListasDeReproduccion( ).get( indiceLista );
@@ -374,7 +361,7 @@ public class InterfazKaraoke extends JFrame
      * <b>pre:</b> La lista de listas de reproducción estó inicializada.<br>
      * <b>post:</b> La lista tiene un lista de reproducción menos.
      */
-    public void eliminarListaReproduccion( )
+    void eliminarListaReproduccion( )
     {
 		ArrayList< ListaReproduccion > listasReproduccion = darListasReproduccionKaraoke( );
         Object[] opciones = new Object[listasReproduccion.size( )];
@@ -411,7 +398,7 @@ public class InterfazKaraoke extends JFrame
     /**
      * Muestra la canción con mayor dificultad.
      */
-    public void mostrarCancionMasDificil( )
+    void mostrarCancionMasDificil( )
     {
         Cancion cancion = karaoke.darCancionMasDificil( );
         if( cancion != null )
@@ -427,7 +414,7 @@ public class InterfazKaraoke extends JFrame
     /**
      * Muestra la canción con menor dificultad.
      */
-    public void mostrarCancionMasFacil( )
+    void mostrarCancionMasFacil( )
     {
         Cancion cancion = karaoke.darCancionMasFacil( );
         if( cancion != null )
@@ -443,7 +430,7 @@ public class InterfazKaraoke extends JFrame
     /**
      * Muestra la canción con mayor duración.
      */
-    public void mostrarCancionMasLarga( )
+    void mostrarCancionMasLarga( )
     {
         Cancion cancion = karaoke.darCancionMasLarga( );
         if( cancion != null )
@@ -459,7 +446,7 @@ public class InterfazKaraoke extends JFrame
     /**
      * Muestra la canción con menor duración.
      */
-    public void mostrarCancionMasCorta( )
+    void mostrarCancionMasCorta( )
     {
         Cancion cancion = karaoke.darCancionMasCorta( );
         if( cancion != null )
@@ -476,7 +463,7 @@ public class InterfazKaraoke extends JFrame
     /**
      * Muestra el artista con mayor nómero de canciones.
      */
-    public void mostrarArtistaMasCanciones( )
+    void mostrarArtistaMasCanciones( )
     {
         Artista artista = karaoke.darArtistaMasCanciones( );
         if( artista != null )
@@ -493,7 +480,7 @@ public class InterfazKaraoke extends JFrame
      * Muestra una lista con todas las canciones de una categoróa del karaoke.
      * @param pCategoria Nombre de la categoróa.
      */
-    public void mostrarCanciones( String pCategoria )
+    void mostrarCanciones( String pCategoria )
     {
 		ArrayList< Cancion > canciones = karaoke.darCancionesCategoria( pCategoria );
         DialogoCanciones dialogo = new DialogoCanciones( pCategoria, canciones );
@@ -503,7 +490,7 @@ public class InterfazKaraoke extends JFrame
     /**
      * Muestra el diólogo que permite agregar una lista de reproducción.
      */
-    public void mostrarDialogoAgregarListaReproduccion( )
+    void mostrarDialogoAgregarListaReproduccion( )
     {
         DialogoAgregarListaReproduccion dialogo = new DialogoAgregarListaReproduccion( this );
         dialogo.setLocationRelativeTo( this );
@@ -514,7 +501,7 @@ public class InterfazKaraoke extends JFrame
      * Muestra el diólogo para agregar o eliminar canciones de una lista de reproducción.
      * @param pNombre Nombre del ListaReproduccion. pNombre != null y pNombre != "".
      */
-    public void mostrarDialogoCancionesListaReproduccion( String pNombre )
+    private void mostrarDialogoCancionesListaReproduccion( String pNombre )
     {
         DialogoCancionesListaReproduccion dialogo = new DialogoCancionesListaReproduccion( this, pNombre );
         dialogo.setLocationRelativeTo( this );
@@ -524,7 +511,7 @@ public class InterfazKaraoke extends JFrame
     /**
      * Muestra todas las listas de reproducción del karaoke en PanelListaReproduccion.
      */
-    public void mostrarListasDeReproduccion( )
+    private void mostrarListasDeReproduccion( )
     {
         panelListaReproduccion.repaint( );
         panelListaReproduccion.actualizarListaReproduccion( karaoke.darListasDeReproduccion( ) );
@@ -537,7 +524,7 @@ public class InterfazKaraoke extends JFrame
     /**
      * Mótodo para la extensión 1.
      */
-    public void reqFuncOpcion1( )
+    void reqFuncOpcion1( )
     {
         String resultado = karaoke.metodo1( );
         JOptionPane.showMessageDialog( this, resultado, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
@@ -546,7 +533,7 @@ public class InterfazKaraoke extends JFrame
     /**
      * Mótodo para la extensión 2.
      */
-    public void reqFuncOpcion2( )
+    void reqFuncOpcion2( )
     {
         String resultado = karaoke.metodo2( );
         JOptionPane.showMessageDialog( this, resultado, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
