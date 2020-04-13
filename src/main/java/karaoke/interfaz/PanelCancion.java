@@ -3,7 +3,6 @@ package karaoke.interfaz;
 import karaoke.mundo.Cancion;
 import mopen.basic.BasicPlayer;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
@@ -12,7 +11,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.InputStream;
 
 /**
  * Panel con la información de una canción.
