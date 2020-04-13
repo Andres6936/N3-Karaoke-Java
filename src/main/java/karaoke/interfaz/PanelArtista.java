@@ -8,6 +8,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -82,21 +83,6 @@ public class PanelArtista extends JPanel implements ActionListener
     private JLabel lblImagen;
 
     /**
-     * Etiqueta de la categoróa.
-     */
-    private JLabel lblCategoria;
-
-    /**
-     * Etiqueta del artista.
-     */
-    private JLabel lblArtistas;
-
-    /**
-     * Botón para agregar una canción.
-     */
-    private JButton btnAgregarCancion;
-
-    /**
      * Combo box con las categoróas del karaoke.
      */
 	private JComboBox< String > cbCategoria;
@@ -119,7 +105,7 @@ public class PanelArtista extends JPanel implements ActionListener
      * Crea el panel con la información del artista.
      * @param pVentana Ventana principal de la aplicación. pVentana != null.
      */
-    public PanelArtista( InterfazKaraoke pVentana )
+    PanelArtista( InterfazKaraoke pVentana )
     {
         principal = pVentana;
 
@@ -130,15 +116,18 @@ public class PanelArtista extends JPanel implements ActionListener
         JPanel informacion = new JPanel( );
         informacion.setLayout( new GridLayout( 1, 4 ) );
 
-        lblCategoria = new JLabel( "Categoróas:" );
-        lblArtistas = new JLabel( "Artistas" );
+        // Etiqueta de la categoróa.
+        JLabel lblCategoria = new JLabel( "Categoróas:" );
+
+        // Etiqueta del artista.
+        JLabel lblArtistas = new JLabel( "Artistas" );
 
         String[] categorias = { Artista.ROCK, Artista.POP, Artista.FUSION_LATINA, Artista.ELECTRO_HOUSE, Artista.DUBSTEP };
-		cbCategoria = new JComboBox< String >( categorias );
+        cbCategoria = new JComboBox<>( categorias );
         cbCategoria.setActionCommand( CAMBIO_CATEGORIA );
         cbCategoria.addActionListener( this );
 
-		cbArtistas = new JComboBox< Artista >( );
+        cbArtistas = new JComboBox<>( );
         cbArtistas.setActionCommand( CAMBIO_ARTISTA );
         cbArtistas.addActionListener( this );
 
@@ -165,11 +154,12 @@ public class PanelArtista extends JPanel implements ActionListener
         lblImagen.setHorizontalAlignment( JLabel.CENTER );
         artista.add( lblImagen, BorderLayout.CENTER );
 
-        btnAgregarCancion = new JButton( AGREGAR_CANCION );
+        // Botón para agregar una canción.
+        JButton btnAgregarCancion = new JButton( AGREGAR_CANCION );
         btnAgregarCancion.setActionCommand( AGREGAR_CANCION );
         btnAgregarCancion.addActionListener( this );
 
-		cbCanciones = new JComboBox< Cancion >( );
+        cbCanciones = new JComboBox<>( );
         cbCanciones.setActionCommand( CAMBIO_CANCION );
         cbCanciones.addActionListener( this );
 
@@ -190,20 +180,19 @@ public class PanelArtista extends JPanel implements ActionListener
      * Actualiza el combo box de artistas.
      * @param pArtistas Lista de artistas. pArtistas != null.
      */
-	public void actualizarArtistas( ArrayList< Artista > pArtistas )
+    void actualizarArtistas( ArrayList< Artista > pArtistas )
     {
         cbArtistas.removeAllItems( );
-        for( int i = 0; i < pArtistas.size( ); i++ )
+        for ( Artista pArtista : pArtistas )
         {
-            Artista a = ( Artista )pArtistas.get( i );
-            cbArtistas.addItem( a );
+            cbArtistas.addItem( pArtista );
         }
     }
 
     /**
      * Actualiza la información del artista seleccionado.
      */
-    public void actualizarArtista( )
+    void actualizarArtista( )
     {
         Artista a = ( Artista )cbArtistas.getSelectedItem( );
         cbCanciones.removeAllItems( );
@@ -214,9 +203,8 @@ public class PanelArtista extends JPanel implements ActionListener
             lblImagen.setIcon( new ImageIcon( a.darImagen( ) ) );
 
 			ArrayList< Cancion > canciones = principal.darCancionesArtista( a.darNombre( ) );
-            for( int i = 0; i < canciones.size( ); i++ )
+            for ( Cancion c : canciones )
             {
-                Cancion c = ( Cancion )canciones.get( i );
                 cbCanciones.addItem( c );
             }
         }
@@ -231,20 +219,18 @@ public class PanelArtista extends JPanel implements ActionListener
      * Retorna la categoróa seleccionada.
      * @return Categoróa seleccionada.
      */
-    public String darCategoriaSeleccionada( )
+    String darCategoriaSeleccionada( )
     {
-        String categoria = ( String )cbCategoria.getSelectedItem( );
-        return categoria;
+        return ( String ) cbCategoria.getSelectedItem( );
     }
 
     /**
      * Retorna el artista seleccionado.
      * @return Artista seleccionado.
      */
-    public String darArtistaSeleccionado( )
+    String darArtistaSeleccionado( )
     {
-        String artista = ( ( Artista )cbArtistas.getSelectedItem( ) ).darNombre( );
-        return artista;
+        return ( ( Artista ) Objects.requireNonNull( cbArtistas.getSelectedItem( ) ) ).darNombre( );
     }
 
     /**
@@ -255,24 +241,23 @@ public class PanelArtista extends JPanel implements ActionListener
     public void actionPerformed( ActionEvent pEvento )
     {
         String comando = pEvento.getActionCommand( );
-        if( comando.equals( CAMBIO_CATEGORIA ) )
+        switch ( comando )
         {
-            String categoria = ( String )cbCategoria.getSelectedItem( );
-            principal.actualizarArtistas( categoria );
-        }
-        else if( comando.equals( CAMBIO_ARTISTA ) )
-        {
-            actualizarArtista( );
-        }
-        else if( comando.equals( CAMBIO_CANCION ) )
-        {
-            Cancion c = ( Cancion )cbCanciones.getSelectedItem( );
-            principal.actualizarCancion( c );
-        }
-        else if( comando.equals( AGREGAR_CANCION ) )
-        {
-            DialogoAgregarCancion dialogo = new DialogoAgregarCancion( principal );
-            dialogo.setVisible( true );
+            case CAMBIO_CATEGORIA:
+                String categoria = ( String ) cbCategoria.getSelectedItem( );
+                principal.actualizarArtistas( categoria );
+                break;
+            case CAMBIO_ARTISTA:
+                actualizarArtista( );
+                break;
+            case CAMBIO_CANCION:
+                Cancion c = ( Cancion ) cbCanciones.getSelectedItem( );
+                principal.actualizarCancion( c );
+                break;
+            case AGREGAR_CANCION:
+                DialogoAgregarCancion dialogo = new DialogoAgregarCancion( principal );
+                dialogo.setVisible( true );
+                break;
         }
     }
 
