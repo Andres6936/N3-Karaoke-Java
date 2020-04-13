@@ -37,7 +37,7 @@ dependencies {
     // dependency, usually in the form '<group>:<module>:<version>'.
 
     // Configuration & Module coordinate:
-    implementation files('lib/BasicPlayer2.3.jar')
+    implementation files('lib/BasicPlayer-1.3.jar')
 
     testImplementation 'junit:junit:4.12'
 }

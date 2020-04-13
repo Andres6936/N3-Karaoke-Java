@@ -1,28 +1,17 @@
 package karaoke.interfaz;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridLayout;
+import karaoke.mundo.Cancion;
+import mopen.basic.BasicPlayer;
+
+import javax.swing.*;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.InputStream;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.TitledBorder;
-
-import karaoke.mundo.Cancion;
-import javazoom.jlgui.basicplayer.BasicPlayer;
-import javazoom.jlgui.basicplayer.BasicPlayerException;
 
 /**
  * Panel con la información de una canción.
@@ -226,15 +215,7 @@ public class PanelCancion extends JPanel implements ActionListener
 
         if( player != null )
         {
-            try
-            {
-                player.stop( );
-            }
-            catch( BasicPlayerException pExcepcion )
-            {
-                JOptionPane.showMessageDialog( this, "No fue posible parar la canción " + pExcepcion.getMessage( ), "Parar canción", JOptionPane.ERROR_MESSAGE );
-            }
-
+            player.stop( );
         }
     }
 
@@ -270,25 +251,11 @@ public class PanelCancion extends JPanel implements ActionListener
         }
         else if( comando.equals( PARAR ) )
         {
-            try
-            {
-                player.stop( );
-            }
-            catch( BasicPlayerException pExcepcion )
-            {
-                JOptionPane.showMessageDialog( this, "No fue posible parar la canción " + pExcepcion.getMessage( ), "Parar canción", JOptionPane.ERROR_MESSAGE );
-            }
+            player.stop( );
         }
         else if( comando.equals( PAUSAR ) )
         {
-            try
-            {
-                player.pause( );
-            }
-            catch( BasicPlayerException pExcepcion )
-            {
-                JOptionPane.showMessageDialog( this, "No fue posible pausar la canción " + pExcepcion.getMessage( ), "Pausar canción", JOptionPane.ERROR_MESSAGE );
-            }
+            player.pause( );
         }
     }
 }
