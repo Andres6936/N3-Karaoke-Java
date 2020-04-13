@@ -80,30 +80,6 @@ public class PanelOpciones extends JPanel implements ActionListener
     private InterfazKaraoke principal;
 
     // -----------------------------------------------------------------
-    // Atributos de interfaz
-    // -----------------------------------------------------------------
-
-    /**
-     * Botón para realizar bósquedas.
-     */
-    private JButton btnBuscar;
-
-    /**
-     * Botón para mostrar todas las canciones del karaoke.
-     */
-    private JButton btnTodas;
-
-    /**
-     * Botón para la opción 1.
-     */
-    private JButton btnOpcion1;
-
-    /**
-     * Botón para la opción 2.
-     */
-    private JButton btnOpcion2;
-
-    // -----------------------------------------------------------------
     // Constructores
     // -----------------------------------------------------------------
 
@@ -111,7 +87,7 @@ public class PanelOpciones extends JPanel implements ActionListener
      * Constructor del panel.
      * @param pVentana Ventana principal. pVentana != null.
      */
-    public PanelOpciones( InterfazKaraoke pVentana )
+    PanelOpciones( InterfazKaraoke pVentana )
     {
         principal = pVentana;
 
@@ -119,25 +95,33 @@ public class PanelOpciones extends JPanel implements ActionListener
         setLayout( new GridLayout( 1, 4 ) );
 
         // Botón opción buscar
-        btnBuscar = new JButton( BUSCAR );
+
+        // Botón para realizar bósquedas.
+        JButton btnBuscar = new JButton( BUSCAR );
         btnBuscar.setActionCommand( BUSCAR );
         btnBuscar.addActionListener( this );
         add( btnBuscar );
 
         // Botón opción todas
-        btnTodas = new JButton( TODAS );
+
+        // Botón para mostrar todas las canciones del karaoke.
+        JButton btnTodas = new JButton( TODAS );
         btnTodas.setActionCommand( TODAS );
         btnTodas.addActionListener( this );
         add( btnTodas );
 
         // Botón opción 1
-        btnOpcion1 = new JButton( "Opción 1" );
+
+        // Botón para la opción 1.
+        JButton btnOpcion1 = new JButton( "Opción 1" );
         btnOpcion1.setActionCommand( OPCION_1 );
         btnOpcion1.addActionListener( this );
         add( btnOpcion1 );
 
         // Botón opción 2
-        btnOpcion2 = new JButton( "Opción 2" );
+
+        // Botón para la opción 2.
+        JButton btnOpcion2 = new JButton( "Opción 2" );
         btnOpcion2.setActionCommand( OPCION_2 );
         btnOpcion2.addActionListener( this );
         add( btnOpcion2 );
@@ -162,25 +146,23 @@ public class PanelOpciones extends JPanel implements ActionListener
 
             if( busqueda != null )
             {
-                if( busqueda.equals( MAS_FACIL ) )
+                switch ( busqueda )
                 {
-                    principal.mostrarCancionMasFacil( );
-                }
-                else if( busqueda.equals( MAS_DIFICIL ) )
-                {
-                    principal.mostrarCancionMasDificil( );
-                }
-                else if( busqueda.equals( MAS_CORTA ) )
-                {
-                    principal.mostrarCancionMasCorta( );
-                }
-                else if( busqueda.equals( MAS_LARGA ) )
-                {
-                    principal.mostrarCancionMasLarga( );
-                }
-                else
-                {
-                    principal.mostrarArtistaMasCanciones( );
+                    case MAS_FACIL:
+                        principal.mostrarCancionMasFacil( );
+                        break;
+                    case MAS_DIFICIL:
+                        principal.mostrarCancionMasDificil( );
+                        break;
+                    case MAS_CORTA:
+                        principal.mostrarCancionMasCorta( );
+                        break;
+                    case MAS_LARGA:
+                        principal.mostrarCancionMasLarga( );
+                        break;
+                    default:
+                        principal.mostrarArtistaMasCanciones( );
+                        break;
                 }
             }
         }
@@ -190,8 +172,7 @@ public class PanelOpciones extends JPanel implements ActionListener
             String c = ( String ) JOptionPane.showInputDialog( null, "Categoróa: ", TODAS, JOptionPane.QUESTION_MESSAGE, null, categorias, Artista.ROCK );
             if( c != null )
             {
-                String categoria = c;
-                principal.mostrarCanciones( categoria );
+                principal.mostrarCanciones( c );
             }
         }
         else if( OPCION_1.equals( pEvento.getActionCommand( ) ) )
