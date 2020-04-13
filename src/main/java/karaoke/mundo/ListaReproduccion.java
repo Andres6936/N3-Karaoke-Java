@@ -33,7 +33,7 @@ public class ListaReproduccion
     public ListaReproduccion( String pNombre )
     {
         nombre = pNombre;
-		canciones = new ArrayList< Cancion >( );
+        canciones = new ArrayList<>( );
     }
 
     // -----------------------------------------------------------------
@@ -69,11 +69,11 @@ public class ListaReproduccion
         Cancion cancionActual = null;
         Cancion cancionBuscada = null;
 
-        for( int i = 0; i < canciones.size( ); i++ )
+        for ( Cancion cancione : canciones )
         {
-            cancionActual = ( Cancion )canciones.get( i );
+            cancionActual = ( Cancion ) cancione;
             String nombreC = cancionActual.darNombre( );
-            if( nombreC.equalsIgnoreCase( pNombreCancion ) )
+            if ( nombreC.equalsIgnoreCase( pNombreCancion ) )
             {
                 cancionBuscada = cancionActual;
             }
@@ -105,7 +105,7 @@ public class ListaReproduccion
 
         for( int i = 0; i < canciones.size( ); i++ )
         {
-            Cancion cancionActual = ( Cancion )canciones.get( i );
+            Cancion cancionActual = canciones.get( i );
             if( cancionActual.darNombre( ).equals( pNombreCancion ) )
             {
                 canciones.remove( i );

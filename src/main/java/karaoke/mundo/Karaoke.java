@@ -14,7 +14,6 @@ public class Karaoke
     /**
      * Cantidad de artistas del karaoke
      */
-    // TODO Parte3 PuntoA: Agregue la constante CANTIDAD_ARTISTAS que determina el nómero de artistas en el karaoke.
     // En el modelo del mundo (ModeloConceptual.jpg) se encuentra el tipo y valor exacto de la constante.
     public final static int CANTIDAD_ARTISTAS = 10;
 
@@ -25,14 +24,12 @@ public class Karaoke
     /**
      * Lista que contiene las listas de reproducción del karaoke.
      */
-    // TODO Parte3 PuntoB: Declare la asociación listasDeReproduccion como una contenedora de tipo variable.
     private ArrayList<ListaReproduccion> listasDeReproduccion;
 
     /**
      * Lista de artistas del karaoke.
      */
-    // TODO Parte3 PuntoC: Declare la asociación artistas como una contenedora de tamaóo fijo.
-    private Artista artistas[];
+    private Artista[] artistas;
 
     // -----------------------------------------------------------------
     // Constructores
@@ -61,16 +58,13 @@ public class Karaoke
         artistas[ 2 ] = new Artista( "Calvin Harris", Artista.ELECTRO_HOUSE, "./data/imagenes/CalvinHarris.jpg" );
         artistas[ 3 ] = new Artista( "ChocQuibTown", Artista.FUSION_LATINA, "./data/imagenes/Chocquibtown.jpg" );
         artistas[ 4 ] = new Artista( "Michael Jackson", Artista.POP, "./data/imagenes/MichaelJackson.jpg" );
-        // TODO Parte3 PuntoD: Asigne las posiciones 5, 6, 7, 8 segón la documentación dada.
         artistas[ 5 ] = new Artista( "Rihanna", Artista.POP, "./data/imagenes/Rihanna.jpg" );
         artistas[ 6 ] = new Artista( "Bomba Estóreo", Artista.FUSION_LATINA, "./data/imagenes/BombaEstereo.jpg" );
         artistas[ 7 ] = new Artista( "Green Day", Artista.ROCK, "./data/imagenes/GreenDay.jpg" );
         artistas[ 8 ] = new Artista( "Bon Jovi", Artista.ROCK, "./data/imagenes/BonJovi.jpg" );
-
         artistas[ 9 ] = new Artista( "Sia", Artista.POP, "./data/imagenes/Sia.jpg" );
 
-        // TODO Parte2 PuntoE: Inicialice la contenedora de listasDeReproduccion segón la documentación dada.
-        listasDeReproduccion = new ArrayList<ListaReproduccion>( );
+        listasDeReproduccion = new ArrayList<>( );
     }
 
     // -----------------------------------------------------------------
@@ -84,7 +78,6 @@ public class Karaoke
      */
     public Artista[] darArtistas( )
     {
-        // TODO Parte3 PuntoF: Complete el mótodo segón la documentación dada.
         return artistas;
     }
 
@@ -95,7 +88,6 @@ public class Karaoke
      */
 	public ArrayList< ListaReproduccion > darListasDeReproduccion( )
     {
-        // TODO Parte3 PuntoG: Complete el mótodo segón la documentación dada.
         return listasDeReproduccion;
     }
 
@@ -231,10 +223,10 @@ public class Karaoke
         Cancion masLarga = null;
         int larga = 0;
         Cancion cancionL = null;
-        for( int i = 0; i < artistas.length; i++ )
+        for ( Artista artista : artistas )
         {
-            cancionL = artistas[ i ].darCancionMasLarga( );
-            if( cancionL != null && cancionL.darDuracion( ) > larga )
+            cancionL = artista.darCancionMasLarga( );
+            if ( cancionL != null && cancionL.darDuracion( ) > larga )
             {
                 masLarga = cancionL;
                 larga = cancionL.darDuracion( );
@@ -259,10 +251,10 @@ public class Karaoke
         if( darCancionMasLarga( ) != null )
             corta = darCancionMasLarga( ).darDuracion( );
 
-        for( int i = 0; i < artistas.length; i++ )
+        for ( Artista artista : artistas )
         {
-            cancionC = artistas[ i ].darCancionMasCorta( );
-            if( cancionC != null && cancionC.darDuracion( ) < corta )
+            cancionC = artista.darCancionMasCorta( );
+            if ( cancionC != null && cancionC.darDuracion( ) < corta )
             {
                 masCorta = cancionC;
                 corta = cancionC.darDuracion( );
@@ -283,12 +275,12 @@ public class Karaoke
         // TODO Parte3 PuntoK: Complete el mótodo segón la documentación dada.
         Artista artistaMayorNumeroCanciones = null;
         int mayorNumeroCanciones = 0;
-        for( int i = 0; i < artistas.length; i++ )
+        for ( Artista artista : artistas )
         {
-            if( artistas[ i ].darCanciones( ).size( ) > mayorNumeroCanciones )
+            if ( artista.darCanciones( ).size( ) > mayorNumeroCanciones )
             {
-                artistaMayorNumeroCanciones = artistas[ i ];
-                mayorNumeroCanciones = artistas[ i ].darCanciones( ).size( );
+                artistaMayorNumeroCanciones = artista;
+                mayorNumeroCanciones = artista.darCanciones( ).size( );
             }
         }
         return artistaMayorNumeroCanciones;

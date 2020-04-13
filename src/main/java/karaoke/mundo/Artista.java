@@ -58,8 +58,7 @@ public class Artista
     /**
      * Lista de canciones del artista.
      */
-    // TODO Parte2 PuntoA: Declare la asociación canciones como una contenedora de tipo variable.
-    private ArrayList<Cancion> canciones;
+    private ArrayList< Cancion > canciones = new ArrayList<>( );
 
     // -----------------------------------------------------------------
     // Constructores
@@ -78,9 +77,6 @@ public class Artista
         nombre = pNombre;
         categoria = pCategoria;
         imagen = pImagen;
-
-        // TODO Parte2 PuntoB: Inicialice la contenedora de canciones segón la documentación dada.
-        canciones = new ArrayList<Cancion>( );
     }
 
     // -----------------------------------------------------------------
@@ -134,11 +130,10 @@ public class Artista
         Cancion dificil = null;
         int dificultad = 0;
 
-        for( int i = 0; i < canciones.size( ); i++ )
+        for ( Cancion cancion : canciones )
         {
-            Cancion cancion = canciones.get( i );
             int dificultadC = cancion.darDificultad( );
-            if( dificultadC > dificultad )
+            if ( dificultadC > dificultad )
             {
                 dificil = cancion;
                 dificultad = dificultadC;
@@ -158,11 +153,10 @@ public class Artista
         Cancion facil = null;
         int dificultad = 11;
 
-        for( int i = 0; i < canciones.size( ); i++ )
+        for ( Cancion cancion : canciones )
         {
-            Cancion cancion = canciones.get( i );
             int dificultadC = cancion.darDificultad( );
-            if( dificultadC < dificultad )
+            if ( dificultadC < dificultad )
             {
                 facil = cancion;
                 dificultad = dificultadC;
@@ -183,11 +177,10 @@ public class Artista
         Cancion masLarga = null;
         int larga = 0;
 
-        for( int i = 0; i < canciones.size( ); i++ )
+        for ( Cancion cancion : canciones )
         {
-            Cancion cancion = canciones.get( i );
             int cancionLarga = cancion.darDuracion( );
-            if( cancionLarga > larga )
+            if ( cancionLarga > larga )
             {
                 masLarga = cancion;
                 larga = cancionLarga;
