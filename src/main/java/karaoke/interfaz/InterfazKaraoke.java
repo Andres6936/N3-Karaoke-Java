@@ -217,7 +217,10 @@ public class InterfazKaraoke extends JFrame
                     int dificultad = Integer.parseInt( datos.getProperty( "artista" + i + ".cancion" + j + ".dificultad" ) );
                     String ruta = datos.getProperty( "artista" + i + ".cancion" + j + ".ruta" );
 
-                    karaoke.agregarCancion( nombre, cancion, duracion, letra, dificultad, ruta );
+                    InputStream in = getClass( ).getClassLoader( ).getResourceAsStream( ruta );
+                    assert in != null;
+
+                    karaoke.agregarCancion( nombre, cancion, duracion, letra, dificultad, in.toString( ) );
                 }
             }
         }
