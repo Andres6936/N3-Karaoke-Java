@@ -199,8 +199,10 @@ public class PanelArtista extends JPanel implements ActionListener
 
         if( a != null )
         {
+            LoaderResource loader = new LoaderResource( );
+
             txtNombre.setText( a.darNombre( ) );
-            lblImagen.setIcon( new ImageIcon( a.darImagen( ) ) );
+            lblImagen.setIcon( loader.load( a.darImagen( ) ) );
 
 			ArrayList< Cancion > canciones = principal.darCancionesArtista( a.darNombre( ) );
             for ( Cancion c : canciones )

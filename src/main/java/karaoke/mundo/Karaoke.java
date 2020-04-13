@@ -53,16 +53,16 @@ public class Karaoke
     {
         artistas = new Artista[CANTIDAD_ARTISTAS];
 
-        artistas[ 0 ] = new Artista( "Adele", Artista.POP, "./data/imagenes/Adele.jpg" );
-        artistas[ 1 ] = new Artista( "AC/DC", Artista.ROCK, "./data/imagenes/AC_DC.jpg" );
-        artistas[ 2 ] = new Artista( "Calvin Harris", Artista.ELECTRO_HOUSE, "./data/imagenes/CalvinHarris.jpg" );
-        artistas[ 3 ] = new Artista( "ChocQuibTown", Artista.FUSION_LATINA, "./data/imagenes/Chocquibtown.jpg" );
-        artistas[ 4 ] = new Artista( "Michael Jackson", Artista.POP, "./data/imagenes/MichaelJackson.jpg" );
-        artistas[ 5 ] = new Artista( "Rihanna", Artista.POP, "./data/imagenes/Rihanna.jpg" );
-        artistas[ 6 ] = new Artista( "Bomba Estóreo", Artista.FUSION_LATINA, "./data/imagenes/BombaEstereo.jpg" );
-        artistas[ 7 ] = new Artista( "Green Day", Artista.ROCK, "./data/imagenes/GreenDay.jpg" );
-        artistas[ 8 ] = new Artista( "Bon Jovi", Artista.ROCK, "./data/imagenes/BonJovi.jpg" );
-        artistas[ 9 ] = new Artista( "Sia", Artista.POP, "./data/imagenes/Sia.jpg" );
+        artistas[ 0 ] = new Artista( "Adele", Artista.POP, "imagenes/Adele.jpg" );
+        artistas[ 1 ] = new Artista( "AC/DC", Artista.ROCK, "imagenes/AC_DC.jpg" );
+        artistas[ 2 ] = new Artista( "Calvin Harris", Artista.ELECTRO_HOUSE, "imagenes/CalvinHarris.jpg" );
+        artistas[ 3 ] = new Artista( "ChocQuibTown", Artista.FUSION_LATINA, "imagenes/Chocquibtown.jpg" );
+        artistas[ 4 ] = new Artista( "Michael Jackson", Artista.POP, "imagenes/MichaelJackson.jpg" );
+        artistas[ 5 ] = new Artista( "Rihanna", Artista.POP, "imagenes/Rihanna.jpg" );
+        artistas[ 6 ] = new Artista( "Bomba Estóreo", Artista.FUSION_LATINA, "imagenes/BombaEstereo.jpg" );
+        artistas[ 7 ] = new Artista( "Green Day", Artista.ROCK, "imagenes/GreenDay.jpg" );
+        artistas[ 8 ] = new Artista( "Bon Jovi", Artista.ROCK, "imagenes/BonJovi.jpg" );
+        artistas[ 9 ] = new Artista( "Sia", Artista.POP, "imagenes/Sia.jpg" );
 
         listasDeReproduccion = new ArrayList<>( );
     }
