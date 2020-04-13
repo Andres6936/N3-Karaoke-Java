@@ -1,8 +1,10 @@
 package karaoke.interfaz;
 
 import java.awt.Color;
+import java.io.IOException;
 import java.io.InputStream;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,7 +13,7 @@ import javax.swing.border.LineBorder;
 /**
  * Panel con la imagen encabezado.
  */
-public class PanelImagen extends JPanel
+class PanelImagen extends JPanel
 {
 
     /**
@@ -23,7 +25,7 @@ public class PanelImagen extends JPanel
      * Mótodo constructor por defecto. Coloca la imagen del encabezado de la
      * aplicación.
 	 */
-    public PanelImagen( )
+    PanelImagen( )
     {
         // La agrega a la etiqueta
         JLabel imagen = new JLabel( "" );
@@ -37,6 +39,17 @@ public class PanelImagen extends JPanel
     private ImageIcon load( final String path )
     {
         InputStream file = getClass( ).getClassLoader( ).getResourceAsStream( path );
-        return new ImageIcon( String.valueOf( file ) );
+
+        assert file != null;
+
+        try
+        {
+            return new ImageIcon( ImageIO.read( file ) );
+        }
+        catch ( Exception e )
+        {
+            System.err.println( "Not is possible load the image with path: " + path );
+            return new ImageIcon( new byte[ 0 ] );
+        }
     }
 }
