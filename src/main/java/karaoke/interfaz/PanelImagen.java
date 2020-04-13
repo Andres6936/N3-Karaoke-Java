@@ -27,29 +27,14 @@ class PanelImagen extends JPanel
 	 */
     PanelImagen( )
     {
+        LoaderResource loader = new LoaderResource( );
+
         // La agrega a la etiqueta
         JLabel imagen = new JLabel( "" );
-        imagen.setIcon( load( "imagenes/karaoke.png" ) );
+        imagen.setIcon( loader.load( "imagenes/karaoke.png" ) );
         add( imagen );
 
         setBackground( Color.WHITE );
         setBorder( new LineBorder( Color.BLACK ) );
-    }
-
-    private ImageIcon load( final String path )
-    {
-        InputStream file = getClass( ).getClassLoader( ).getResourceAsStream( path );
-
-        assert file != null;
-
-        try
-        {
-            return new ImageIcon( ImageIO.read( file ) );
-        }
-        catch ( Exception e )
-        {
-            System.err.println( "Not is possible load the image with path: " + path );
-            return new ImageIcon( new byte[ 0 ] );
-        }
     }
 }

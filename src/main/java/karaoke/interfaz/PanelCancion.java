@@ -3,6 +3,7 @@ package karaoke.interfaz;
 import karaoke.mundo.Cancion;
 import mopen.basic.BasicPlayer;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
@@ -143,20 +144,22 @@ public class PanelCancion extends JPanel implements ActionListener
         botones.setBorder( new EmptyBorder( 2, 60, 0, 60 ) );
         botones.setPreferredSize( new Dimension( 0, 35 ) );
 
+        LoaderResource loader = new LoaderResource( );
+
         // Botón para reproducir una canción.
-        JButton btnReproducir = new JButton( load( "imagenes/reproducir.gif" ) );
+        JButton btnReproducir = new JButton( loader.load( "imagenes/reproducir.gif" ) );
         btnReproducir.setActionCommand( REPRODUCIR );
         btnReproducir.addActionListener( this );
         botones.add( btnReproducir );
 
         // Botón para pausar una canción.
-        JButton btnPausar = new JButton( load( "imagenes/pausar.gif" ) );
+        JButton btnPausar = new JButton( loader.load( "imagenes/pausar.gif" ) );
         btnPausar.setActionCommand( PAUSAR );
         btnPausar.addActionListener( this );
         botones.add( btnPausar );
 
         // Botón para parar una canción.
-        JButton btnParar = new JButton( load( "imagenes/parar.gif" ) );
+        JButton btnParar = new JButton( loader.load( "imagenes/parar.gif" ) );
         btnParar.setActionCommand( PARAR );
         btnParar.addActionListener( this );
         botones.add( btnParar );
@@ -169,12 +172,6 @@ public class PanelCancion extends JPanel implements ActionListener
     // -----------------------------------------------------------------
     // Mótodos
     // -----------------------------------------------------------------
-
-    private ImageIcon load( final String path )
-    {
-        InputStream file = getClass( ).getClassLoader( ).getResourceAsStream( path );
-        return new ImageIcon( String.valueOf( file ) );
-    }
 
     /**
      * Actualiza la información de la canción.
